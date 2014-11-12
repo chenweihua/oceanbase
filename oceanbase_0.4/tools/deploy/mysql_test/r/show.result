@@ -1,0 +1,38 @@
+SHOW TABLES like '\\_\\_%';
+table_name
+__first_tablet_entry
+__all_all_column
+__all_join_info
+__all_client
+__all_cluster
+__all_server
+__all_server_session
+__all_server_stat
+__all_statement
+__all_sys_config
+__all_sys_config_stat
+__all_sys_param
+__all_sys_stat
+__all_table_privilege
+__all_trigger_event
+__all_user
+SHOW VARIABLES like '%increment%';
+variable_name	value
+auto_increment_increment	1
+SHOW GLOBAL VARIABLES like '%increment%';
+variable_name	value
+auto_increment_increment	1
+show grants;
+grants
+GRANT ALL PRIVILEGES ,GRANT OPTION ON * TO 'admin'
+show columns from __all_sys_stat;
+field	type	nullable	key	default	extra
+gm_create	createtime		0	NULL	
+gm_modify	modifytime		0	NULL	
+cluster_id	int		1	NULL	
+name	varchar(256)		2	NULL	
+data_type	int		0	NULL	
+value	varchar(256)		0	NULL	
+info	varchar(256)		0	NULL	
+show warnings;
+level	code	message

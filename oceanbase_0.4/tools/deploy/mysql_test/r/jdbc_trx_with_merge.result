@@ -1,0 +1,31 @@
+case 1:  two trx commit after merge finished
+drop table if exists t1;
+create table t1(c0 int primary key, c1 int);
+insert into t1 values(0,0),(-1,-1);
+prepare stmt_i from insert into t1 values(?,?),(?,?);
+prepare stmt_u from update t1 set c1=? where c0=?;
+prepare stmt_d from delete from t1 where c0=?;
+prepare stmt_s from select c0,c1 from t1 where c0=? for update;
+prepare stmt_select from select c0,c1 from t1;
+set autocommit=0;
+set @a1=1;
+set @b1=1;
+set @a2=2;
+set @b2=2;
+execute stmt_i using @a1,@b1,@a2,@b2;
+execute stmt_u using @b2,@a1;
+execute stmt_d using @a2;
+execute stmt_s using @a1;
+c0	c1
+1	2
+execute stmt_s using @a2;
+c0	c1
+merge happens
+[minor_freeze] err=0
+commit;
+ERROR UNKNOWN: failed to start a transaction
+set autocommit=1;
+execute stmt_select;
+c0	c1
+-1	-1
+0	0

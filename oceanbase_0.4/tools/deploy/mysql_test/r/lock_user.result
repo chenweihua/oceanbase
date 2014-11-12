@@ -1,0 +1,4 @@
+drop table if exists t1,t2,t3,t4;
+create user 'u1' identified by 'pass1';
+alter user 'u1' locked;
+create user 'u2' identified by 'pass2';

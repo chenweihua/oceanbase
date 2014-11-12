@@ -1,0 +1,248 @@
+#!/usr/bin/env python2.6
+
+# Software: esy+
+# Version: 1.0
+# Authors: yiming.czw <yiming.czw@taobao.com>
+# initial release 2013.11.10 
+#
+
+import os
+import sys
+import curses
+import time
+import subprocess
+from   subprocess import Popen
+import os.path
+from   os.path import dirname, realpath, exists, basename
+from   os import listdir
+from os import environ
+
+def error_msg(msg):
+    print '[ERROR]:\033[31m %s \033[0m' % msg
+    sys.stdout.flush()
+
+def info_msg(msg):
+    print '[INFO]:\033[32m %s \033[0m' % msg
+    sys.stdout.flush()
+
+class TestManager:
+    base_dir = None
+    scr = None
+    cur_dir = None
+    test_dir = None
+    
+    file_list = dict({"dirs":None, "files":None})
+    file_num = None 
+    
+    max_line_num = 15
+    cur_line = 0
+    first_line = 0
+    last_line = None
+
+
+   
+    def __init__(self):
+        base_dir = dirname(realpath(__file__))
+        if exists(base_dir + "/mytest" ):
+            pass
+        else:
+            error_msg("Can not find " + base_dir + "/mytest , please check it!")
+        if exists(base_dir + "/t"):
+            self.cur_dir = base_dir + "/t"
+            self.test_dir = self.cur_dir
+        else:
+            error_msg("Can not find " + base_dir + "/t , please check it!")
+        self.last_line = self.first_line + self.max_line_num
+    
+    def color_set(self):
+        curses.start_color()
+        curses.use_default_colors()
+        curses.init_pair(1, curses.COLOR_CYAN, -1)
+        curses.init_pair(2, curses.COLOR_BLACK, curses.COLOR_GREEN)
+        curses.init_pair(3, curses.COLOR_RED, -1)
+        curses.init_pair(4, curses.COLOR_BLACK, curses.COLOR_WHITE)
+        curses.init_pair(5, curses.COLOR_BLUE, -1)
+    
+    def title(self):
+        title = 'hi! Make test easy! :)' 
+        self.scr.addstr(0, 0, title, curses.color_pair(1))
+
+    def get_file_list(self):
+        listdirs = listdir(self.cur_dir)        
+        self.file_list["files"] = [file for file in listdirs if os.path.isfile(self.cur_dir + "/" + file)]
+        self.file_list["dirs"] = [dir for dir in listdirs if dir not in self.file_list["files"]]
+        list.sort(self.file_list["files"]) 
+        list.sort(self.file_list["dirs"]) 
+        self.file_num = len(self.file_list["dirs"]) + len(self.file_list["files"])
+    
+    
+    def print_platform(self, num):
+        i = 0
+        j = 0
+        
+        for dir in self.file_list["dirs"]:
+            if (j < self.first_line):
+                pass
+            elif (j >= self.last_line):
+                pass
+            elif (i == num - 1 - self.first_line):
+                self.scr.addstr(4+i, 10, dir, curses.color_pair(2))
+                i = i + 1
+            else:    
+                self.scr.addstr(4+i, 10, dir, curses.color_pair(1))
+                i = i + 1
+            j=j+1
+        
+        for file in self.file_list["files"]:
+            if (j < self.first_line):
+                pass
+            elif (j >= self.last_line):
+                pass
+            elif (i == num - 1 - self.first_line):
+                self.scr.addstr(4+i, 10, file, curses.color_pair(2))
+                i = i + 1
+            else:
+                self.scr.addstr(4+i, 10, file)
+                i = i + 1
+            j=j+1
+        self.title()
+    
+    def platform_info(self, msg):
+        msg = '[INFO]: ' + msg
+        self.scr.addstr(50, 10, msg, curses.color_pair(3))
+        self.scr.refresh()
+
+    def dir_info(self):
+        msg = self.cur_dir
+        self.scr.addstr(51, 0, msg, curses.color_pair(4))
+
+    
+    def reset_platform(self):
+        self.get_file_list()
+        self.cur_line = 0
+        self.first_line = 0
+        self.last_line = self.max_line_num
+        self.scr.clear()
+        self.print_platform(0)
+        
+    def key_down(self):
+        self.get_file_list()
+        self.scr.erase()
+        if (self.cur_line < self.file_num):
+            self.cur_line = self.cur_line + 1
+            if (self.cur_line > self.last_line):
+                self.first_line = self.first_line + 1
+                self.last_line = self.last_line + 1
+        
+        self.print_platform(self.cur_line)
+        self.dir_info()
+        self.scr.refresh()
+    
+    def key_up(self):
+        self.get_file_list()
+        self.scr.erase()
+        if (self.cur_line >= 2):
+            self.cur_line = self.cur_line - 1
+            if (self.cur_line <= self.first_line):
+                self.first_line = self.first_line - 1
+                self.last_line = self.last_line - 1
+
+        self.print_platform(self.cur_line)
+        self.dir_info()
+        self.scr.refresh()
+    
+    def key_left(self):
+        cur_dir = dirname(self.cur_dir)
+        if (self.cur_line == 0):
+            pass
+        elif (self.cur_dir == self.base_dir):
+            pass    
+        elif (len(str(cur_dir)) < len(str(self.test_dir))):
+            pass
+        else:
+            self.cur_dir = cur_dir
+            self.reset_platform()
+            self.dir_info()
+            self.scr.refresh()
+    
+    def key_right(self):
+        if (self.cur_line == 0):
+            pass
+        elif (self.cur_line <= len(self.file_list["dirs"])):
+            cur_dir = self.cur_dir + "/" +self.file_list["dirs"][self.cur_line - 1]
+            if (len(listdir(cur_dir)) == 0):
+                self.platform_info('Empty dir: '+ cur_dir)
+                pass 
+            else:
+                self.cur_dir = self.cur_dir + "/" +self.file_list["dirs"][self.cur_line - 1]
+                self.reset_platform()
+        else:
+            cmd = 'vim ' + self.cur_dir + "/" + self.file_list["files"][self.cur_line - 1 - len(self.file_list["dirs"])]
+            subprocess.call(cmd, shell=True)
+            curses.endwin()
+            self.scr = curses.initscr()
+        
+        self.dir_info()
+        self.scr.refresh()
+    
+    def key_enter(self):
+        if (self.cur_line == 0):
+            pass
+        elif (self.cur_line <= len(self.file_list["dirs"])):
+            pass
+        else:
+            test = None
+            dir = self.cur_dir + '/'
+            if(dirname(dir) != self.test_dir):
+                test = basename(self.cur_dir) + '.'
+            else:
+                test = ' '
+                
+            case = self.file_list["files"][self.cur_line - 1 - len(self.file_list["dirs"])].split('.')
+            cmd = './mytest ' + str(test) + case[0]
+            curses.endwin()
+            subprocess.call(cmd, shell=True)
+            exit(0)
+
+    def action(self):
+        self.scr.keypad(1) 
+        #self.scr.border(0)
+        self.get_file_list()
+        self.print_platform(0)
+        while True:
+            ch = self.scr.getch()  
+            if ch in [27, 81, 113]:
+                exit(0)
+            elif ch == curses.KEY_DOWN:
+                self.key_down() 
+            elif ch == curses.KEY_UP:
+                self.key_up()
+            elif ch == curses.KEY_LEFT:
+                self.key_left()
+            elif ch == curses.KEY_RIGHT:
+                self.key_right()
+            elif ch == ord('\n'):
+                self.key_enter()
+            else:
+                pass
+            
+    def run(self):
+        try:
+            self.scr = curses.initscr()
+            curses.noecho()
+            environ['TERM'] = 'linux'
+            curses.curs_set(0)
+            self.color_set()
+            self.action()
+
+        except KeyboardInterrupt, e:
+            self.scr.clear()
+            print "\nesy+:  bye bye!"
+        finally:
+            curses.endwin()
+
+if __name__ == '__main__':
+    test_manager = TestManager()
+    test_manager.run()
+
+__all__ = [""]

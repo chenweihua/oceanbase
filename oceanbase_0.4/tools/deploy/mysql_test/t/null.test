@@ -1,0 +1,57 @@
+--disable_warnings
+drop table if exists t1,t2,t3,t4;
+--enable_warnings
+
+create table t1(pk int primary key,extra int);
+
+insert into t1(pk) values(1),(2);
+select * from t1;
+
+insert into t1(pk,extra) values(3,NULL),(4,NULL);
+select * from t1;
+
+insert into t1(pk,extra) values(NULL,NULL);
+select * from t1;
+
+
+select * from t1 where extra = NULL;
+select * from t1 where extra != NULL;
+select * from t1 where extra is NULL;
+select * from t1 where extra is not NULL;
+select * from t1 where pk is NULL;
+select * from t1 where pk = NULL;
+select * from t1 where pk != NULL;
+select * from t1 where pk is not  NULL;
+
+select * from t1 where pk in (NULL);
+select * from t1 where pk in (NULL,1);
+
+
+select * from t1 where null > null;
+select * from t1 where null < null;
+select * from t1 where null = null;
+select * from t1 where null > 1;
+select * from t1 where null < 1;
+select * from t1 where null is null;
+
+
+update t1 set extra=1 where pk = NULL;
+select * from t1;
+--error 5047
+update t1 set extra=1 where pk != NULL;
+--error 5047
+update t1 set extra=1 where pk is NULL;
+--error 5047
+update t1 set extra=1 where pk is not NULL;
+
+delete from t1 where pk = NULL;
+select * from t1;
+
+--error 5047
+delete from t1 where pk is NULL;
+--error 5047
+delete from t1 where pk is not NULL;
+--error 5047
+delete from t1 where pk != NULL;
+
+drop table t1;

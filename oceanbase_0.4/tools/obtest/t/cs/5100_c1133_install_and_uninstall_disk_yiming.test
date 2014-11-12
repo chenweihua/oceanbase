@@ -1,0 +1,105 @@
+deploy ob1=OBI(cluster=1133);
+deploy ob1.reboot;
+
+deploy ob1.cs0.cs_admin install_disk     1;
+deploy ob1.cs0.cs_admin install_disk     1;
+deploy ob1.cs0.cs_admin install_disk     1;
+deploy ob1.cs0.cs_admin install_disk     1;
+deploy ob1.cs0.cs_admin install_disk     1;
+
+deploy ob1.cs0.cs_admin uninstall_disk  11;
+deploy ob1.cs0.cs_admin uninstall_disk  11;
+deploy ob1.cs0.cs_admin uninstall_disk  11;
+deploy ob1.cs0.cs_admin uninstall_disk  11;
+deploy ob1.cs0.cs_admin uninstall_disk  11;
+
+deploy ob1.cs0.cs_admin uninstall_disk   1;
+deploy ob1.cs0.cs_admin uninstall_disk   2;
+deploy ob1.cs0.cs_admin uninstall_disk   3;
+deploy ob1.cs0.cs_admin uninstall_disk   4;
+deploy ob1.cs0.cs_admin uninstall_disk   5;
+deploy ob1.cs0.cs_admin uninstall_disk   6;
+deploy ob1.cs0.cs_admin uninstall_disk   7;
+deploy ob1.cs0.cs_admin uninstall_disk   8;
+deploy ob1.cs0.cs_admin uninstall_disk   9;
+deploy ob1.cs0.cs_admin uninstall_disk  10;
+
+deploy ob1.cs1.cs_admin uninstall_disk   1;
+deploy ob1.cs1.cs_admin uninstall_disk   2;
+deploy ob1.cs1.cs_admin uninstall_disk   3;
+deploy ob1.cs1.cs_admin uninstall_disk   4;
+deploy ob1.cs1.cs_admin uninstall_disk   5;
+deploy ob1.cs1.cs_admin uninstall_disk   6;
+deploy ob1.cs1.cs_admin uninstall_disk   7;
+deploy ob1.cs1.cs_admin uninstall_disk   8;
+deploy ob1.cs1.cs_admin uninstall_disk   9;
+deploy ob1.cs1.cs_admin uninstall_disk  10;
+
+deploy ob1.cs0.cs_admin uninstall_disk   1;
+deploy ob1.cs0.cs_admin uninstall_disk   2;
+deploy ob1.cs0.cs_admin uninstall_disk   3;
+deploy ob1.cs0.cs_admin uninstall_disk   4;
+deploy ob1.cs0.cs_admin uninstall_disk   5;
+deploy ob1.cs0.cs_admin uninstall_disk   6;
+deploy ob1.cs0.cs_admin uninstall_disk   7;
+deploy ob1.cs0.cs_admin uninstall_disk   8;
+deploy ob1.cs0.cs_admin uninstall_disk   9;
+deploy ob1.cs0.cs_admin uninstall_disk  10;
+
+deploy ob1.cs1.cs_admin uninstall_disk   1;
+deploy ob1.cs1.cs_admin uninstall_disk   2;
+deploy ob1.cs1.cs_admin uninstall_disk   3;
+deploy ob1.cs1.cs_admin uninstall_disk   4;
+deploy ob1.cs1.cs_admin uninstall_disk   5;
+deploy ob1.cs1.cs_admin uninstall_disk   6;
+deploy ob1.cs1.cs_admin uninstall_disk   7;
+deploy ob1.cs1.cs_admin uninstall_disk   8;
+deploy ob1.cs1.cs_admin uninstall_disk   9;
+deploy ob1.cs1.cs_admin uninstall_disk  10;
+
+
+sleep 60;
+
+deploy ob1.cs0.cs_admin install_disk   1;
+deploy ob1.cs0.cs_admin install_disk   2;
+deploy ob1.cs0.cs_admin install_disk   3;
+deploy ob1.cs0.cs_admin install_disk   4;
+deploy ob1.cs0.cs_admin install_disk   5;
+deploy ob1.cs0.cs_admin install_disk   6;
+deploy ob1.cs0.cs_admin install_disk   7;
+deploy ob1.cs0.cs_admin install_disk   8;
+deploy ob1.cs0.cs_admin install_disk   9;
+deploy ob1.cs0.cs_admin install_disk  10;
+
+deploy ob1.cs1.cs_admin install_disk   1;
+deploy ob1.cs1.cs_admin install_disk   2;
+deploy ob1.cs1.cs_admin install_disk   3;
+deploy ob1.cs1.cs_admin install_disk   4;
+deploy ob1.cs1.cs_admin install_disk   5;
+deploy ob1.cs1.cs_admin install_disk   6;
+deploy ob1.cs1.cs_admin install_disk   7;
+deploy ob1.cs1.cs_admin install_disk   8;
+deploy ob1.cs1.cs_admin install_disk   9;
+deploy ob1.cs1.cs_admin install_disk  10;
+
+deploy ob1.cs0.cs_admin install_disk   1;
+deploy ob1.cs0.cs_admin install_disk   2;
+deploy ob1.cs0.cs_admin install_disk   3;
+deploy ob1.cs0.cs_admin install_disk   4;
+deploy ob1.cs0.cs_admin install_disk   5;
+deploy ob1.cs0.cs_admin install_disk   6;
+deploy ob1.cs0.cs_admin install_disk   7;
+deploy ob1.cs0.cs_admin install_disk   8;
+deploy ob1.cs0.cs_admin install_disk   9;
+deploy ob1.cs0.cs_admin install_disk  10;
+
+deploy ob1.cs1.cs_admin install_disk   1;
+deploy ob1.cs1.cs_admin install_disk   2;
+deploy ob1.cs1.cs_admin install_disk   3;
+deploy ob1.cs1.cs_admin install_disk   4;
+deploy ob1.cs1.cs_admin install_disk   5;
+deploy ob1.cs1.cs_admin install_disk   6;
+deploy ob1.cs1.cs_admin install_disk   7;
+deploy ob1.cs1.cs_admin install_disk   8;
+deploy ob1.cs1.cs_admin install_disk   9;
+deploy ob1.cs1.cs_admin install_disk  10;

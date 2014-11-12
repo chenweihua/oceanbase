@@ -1,0 +1,4587 @@
+ob1=OBI(cluster=1244)
+ob2=OBI(cluster=1244)
+ob2.rs0.set master=ob1.rs0
+ob1.reboot
+ob2.reboot
+ob1.mysql set global ob_read_consistency=4
+ob1.create_client
+create table t1(c1 int primary key, c2 int);
+cluster_id	cluster_role	cluster_flow_percent
+1	1	100
+2	2	0
+ob1.switch_cluster ob2
+cluster_id	cluster_role	cluster_flow_percent
+1	2	0
+2	1	100
+replace into t1 values(1000,1000);
+replace into t1 values(999,999);
+replace into t1 values(998,998);
+replace into t1 values(997,997);
+replace into t1 values(996,996);
+replace into t1 values(995,995);
+replace into t1 values(994,994);
+replace into t1 values(993,993);
+replace into t1 values(992,992);
+replace into t1 values(991,991);
+replace into t1 values(990,990);
+replace into t1 values(989,989);
+replace into t1 values(988,988);
+replace into t1 values(987,987);
+replace into t1 values(986,986);
+replace into t1 values(985,985);
+replace into t1 values(984,984);
+replace into t1 values(983,983);
+replace into t1 values(982,982);
+replace into t1 values(981,981);
+replace into t1 values(980,980);
+replace into t1 values(979,979);
+replace into t1 values(978,978);
+replace into t1 values(977,977);
+replace into t1 values(976,976);
+replace into t1 values(975,975);
+replace into t1 values(974,974);
+replace into t1 values(973,973);
+replace into t1 values(972,972);
+replace into t1 values(971,971);
+replace into t1 values(970,970);
+replace into t1 values(969,969);
+replace into t1 values(968,968);
+replace into t1 values(967,967);
+replace into t1 values(966,966);
+replace into t1 values(965,965);
+replace into t1 values(964,964);
+replace into t1 values(963,963);
+replace into t1 values(962,962);
+replace into t1 values(961,961);
+replace into t1 values(960,960);
+replace into t1 values(959,959);
+replace into t1 values(958,958);
+replace into t1 values(957,957);
+replace into t1 values(956,956);
+replace into t1 values(955,955);
+replace into t1 values(954,954);
+replace into t1 values(953,953);
+replace into t1 values(952,952);
+replace into t1 values(951,951);
+replace into t1 values(950,950);
+replace into t1 values(949,949);
+replace into t1 values(948,948);
+replace into t1 values(947,947);
+replace into t1 values(946,946);
+replace into t1 values(945,945);
+replace into t1 values(944,944);
+replace into t1 values(943,943);
+replace into t1 values(942,942);
+replace into t1 values(941,941);
+replace into t1 values(940,940);
+replace into t1 values(939,939);
+replace into t1 values(938,938);
+replace into t1 values(937,937);
+replace into t1 values(936,936);
+replace into t1 values(935,935);
+replace into t1 values(934,934);
+replace into t1 values(933,933);
+replace into t1 values(932,932);
+replace into t1 values(931,931);
+replace into t1 values(930,930);
+replace into t1 values(929,929);
+replace into t1 values(928,928);
+replace into t1 values(927,927);
+replace into t1 values(926,926);
+replace into t1 values(925,925);
+replace into t1 values(924,924);
+replace into t1 values(923,923);
+replace into t1 values(922,922);
+replace into t1 values(921,921);
+replace into t1 values(920,920);
+replace into t1 values(919,919);
+replace into t1 values(918,918);
+replace into t1 values(917,917);
+replace into t1 values(916,916);
+replace into t1 values(915,915);
+replace into t1 values(914,914);
+replace into t1 values(913,913);
+replace into t1 values(912,912);
+replace into t1 values(911,911);
+replace into t1 values(910,910);
+replace into t1 values(909,909);
+replace into t1 values(908,908);
+replace into t1 values(907,907);
+replace into t1 values(906,906);
+replace into t1 values(905,905);
+replace into t1 values(904,904);
+replace into t1 values(903,903);
+replace into t1 values(902,902);
+replace into t1 values(901,901);
+replace into t1 values(900,900);
+replace into t1 values(899,899);
+replace into t1 values(898,898);
+replace into t1 values(897,897);
+replace into t1 values(896,896);
+replace into t1 values(895,895);
+replace into t1 values(894,894);
+replace into t1 values(893,893);
+replace into t1 values(892,892);
+replace into t1 values(891,891);
+replace into t1 values(890,890);
+replace into t1 values(889,889);
+replace into t1 values(888,888);
+replace into t1 values(887,887);
+replace into t1 values(886,886);
+replace into t1 values(885,885);
+replace into t1 values(884,884);
+replace into t1 values(883,883);
+replace into t1 values(882,882);
+replace into t1 values(881,881);
+replace into t1 values(880,880);
+replace into t1 values(879,879);
+replace into t1 values(878,878);
+replace into t1 values(877,877);
+replace into t1 values(876,876);
+replace into t1 values(875,875);
+replace into t1 values(874,874);
+replace into t1 values(873,873);
+replace into t1 values(872,872);
+replace into t1 values(871,871);
+replace into t1 values(870,870);
+replace into t1 values(869,869);
+replace into t1 values(868,868);
+replace into t1 values(867,867);
+replace into t1 values(866,866);
+replace into t1 values(865,865);
+replace into t1 values(864,864);
+replace into t1 values(863,863);
+replace into t1 values(862,862);
+replace into t1 values(861,861);
+replace into t1 values(860,860);
+replace into t1 values(859,859);
+replace into t1 values(858,858);
+replace into t1 values(857,857);
+replace into t1 values(856,856);
+replace into t1 values(855,855);
+replace into t1 values(854,854);
+replace into t1 values(853,853);
+replace into t1 values(852,852);
+replace into t1 values(851,851);
+replace into t1 values(850,850);
+replace into t1 values(849,849);
+replace into t1 values(848,848);
+replace into t1 values(847,847);
+replace into t1 values(846,846);
+replace into t1 values(845,845);
+replace into t1 values(844,844);
+replace into t1 values(843,843);
+replace into t1 values(842,842);
+replace into t1 values(841,841);
+replace into t1 values(840,840);
+replace into t1 values(839,839);
+replace into t1 values(838,838);
+replace into t1 values(837,837);
+replace into t1 values(836,836);
+replace into t1 values(835,835);
+replace into t1 values(834,834);
+replace into t1 values(833,833);
+replace into t1 values(832,832);
+replace into t1 values(831,831);
+replace into t1 values(830,830);
+replace into t1 values(829,829);
+replace into t1 values(828,828);
+replace into t1 values(827,827);
+replace into t1 values(826,826);
+replace into t1 values(825,825);
+replace into t1 values(824,824);
+replace into t1 values(823,823);
+replace into t1 values(822,822);
+replace into t1 values(821,821);
+replace into t1 values(820,820);
+replace into t1 values(819,819);
+replace into t1 values(818,818);
+replace into t1 values(817,817);
+replace into t1 values(816,816);
+replace into t1 values(815,815);
+replace into t1 values(814,814);
+replace into t1 values(813,813);
+replace into t1 values(812,812);
+replace into t1 values(811,811);
+replace into t1 values(810,810);
+replace into t1 values(809,809);
+replace into t1 values(808,808);
+replace into t1 values(807,807);
+replace into t1 values(806,806);
+replace into t1 values(805,805);
+replace into t1 values(804,804);
+replace into t1 values(803,803);
+replace into t1 values(802,802);
+replace into t1 values(801,801);
+replace into t1 values(800,800);
+replace into t1 values(799,799);
+replace into t1 values(798,798);
+replace into t1 values(797,797);
+replace into t1 values(796,796);
+replace into t1 values(795,795);
+replace into t1 values(794,794);
+replace into t1 values(793,793);
+replace into t1 values(792,792);
+replace into t1 values(791,791);
+replace into t1 values(790,790);
+replace into t1 values(789,789);
+replace into t1 values(788,788);
+replace into t1 values(787,787);
+replace into t1 values(786,786);
+replace into t1 values(785,785);
+replace into t1 values(784,784);
+replace into t1 values(783,783);
+replace into t1 values(782,782);
+replace into t1 values(781,781);
+replace into t1 values(780,780);
+replace into t1 values(779,779);
+replace into t1 values(778,778);
+replace into t1 values(777,777);
+replace into t1 values(776,776);
+replace into t1 values(775,775);
+replace into t1 values(774,774);
+replace into t1 values(773,773);
+replace into t1 values(772,772);
+replace into t1 values(771,771);
+replace into t1 values(770,770);
+replace into t1 values(769,769);
+replace into t1 values(768,768);
+replace into t1 values(767,767);
+replace into t1 values(766,766);
+replace into t1 values(765,765);
+replace into t1 values(764,764);
+replace into t1 values(763,763);
+replace into t1 values(762,762);
+replace into t1 values(761,761);
+replace into t1 values(760,760);
+replace into t1 values(759,759);
+replace into t1 values(758,758);
+replace into t1 values(757,757);
+replace into t1 values(756,756);
+replace into t1 values(755,755);
+replace into t1 values(754,754);
+replace into t1 values(753,753);
+replace into t1 values(752,752);
+replace into t1 values(751,751);
+replace into t1 values(750,750);
+replace into t1 values(749,749);
+replace into t1 values(748,748);
+replace into t1 values(747,747);
+replace into t1 values(746,746);
+replace into t1 values(745,745);
+replace into t1 values(744,744);
+replace into t1 values(743,743);
+replace into t1 values(742,742);
+replace into t1 values(741,741);
+replace into t1 values(740,740);
+replace into t1 values(739,739);
+replace into t1 values(738,738);
+replace into t1 values(737,737);
+replace into t1 values(736,736);
+replace into t1 values(735,735);
+replace into t1 values(734,734);
+replace into t1 values(733,733);
+replace into t1 values(732,732);
+replace into t1 values(731,731);
+replace into t1 values(730,730);
+replace into t1 values(729,729);
+replace into t1 values(728,728);
+replace into t1 values(727,727);
+replace into t1 values(726,726);
+replace into t1 values(725,725);
+replace into t1 values(724,724);
+replace into t1 values(723,723);
+replace into t1 values(722,722);
+replace into t1 values(721,721);
+replace into t1 values(720,720);
+replace into t1 values(719,719);
+replace into t1 values(718,718);
+replace into t1 values(717,717);
+replace into t1 values(716,716);
+replace into t1 values(715,715);
+replace into t1 values(714,714);
+replace into t1 values(713,713);
+replace into t1 values(712,712);
+replace into t1 values(711,711);
+replace into t1 values(710,710);
+replace into t1 values(709,709);
+replace into t1 values(708,708);
+replace into t1 values(707,707);
+replace into t1 values(706,706);
+replace into t1 values(705,705);
+replace into t1 values(704,704);
+replace into t1 values(703,703);
+replace into t1 values(702,702);
+replace into t1 values(701,701);
+replace into t1 values(700,700);
+replace into t1 values(699,699);
+replace into t1 values(698,698);
+replace into t1 values(697,697);
+replace into t1 values(696,696);
+replace into t1 values(695,695);
+replace into t1 values(694,694);
+replace into t1 values(693,693);
+replace into t1 values(692,692);
+replace into t1 values(691,691);
+replace into t1 values(690,690);
+replace into t1 values(689,689);
+replace into t1 values(688,688);
+replace into t1 values(687,687);
+replace into t1 values(686,686);
+replace into t1 values(685,685);
+replace into t1 values(684,684);
+replace into t1 values(683,683);
+replace into t1 values(682,682);
+replace into t1 values(681,681);
+replace into t1 values(680,680);
+replace into t1 values(679,679);
+replace into t1 values(678,678);
+replace into t1 values(677,677);
+replace into t1 values(676,676);
+replace into t1 values(675,675);
+replace into t1 values(674,674);
+replace into t1 values(673,673);
+replace into t1 values(672,672);
+replace into t1 values(671,671);
+replace into t1 values(670,670);
+replace into t1 values(669,669);
+replace into t1 values(668,668);
+replace into t1 values(667,667);
+replace into t1 values(666,666);
+replace into t1 values(665,665);
+replace into t1 values(664,664);
+replace into t1 values(663,663);
+replace into t1 values(662,662);
+replace into t1 values(661,661);
+replace into t1 values(660,660);
+replace into t1 values(659,659);
+replace into t1 values(658,658);
+replace into t1 values(657,657);
+replace into t1 values(656,656);
+replace into t1 values(655,655);
+replace into t1 values(654,654);
+replace into t1 values(653,653);
+replace into t1 values(652,652);
+replace into t1 values(651,651);
+replace into t1 values(650,650);
+replace into t1 values(649,649);
+replace into t1 values(648,648);
+replace into t1 values(647,647);
+replace into t1 values(646,646);
+replace into t1 values(645,645);
+replace into t1 values(644,644);
+replace into t1 values(643,643);
+replace into t1 values(642,642);
+replace into t1 values(641,641);
+replace into t1 values(640,640);
+replace into t1 values(639,639);
+replace into t1 values(638,638);
+replace into t1 values(637,637);
+replace into t1 values(636,636);
+replace into t1 values(635,635);
+replace into t1 values(634,634);
+replace into t1 values(633,633);
+replace into t1 values(632,632);
+replace into t1 values(631,631);
+replace into t1 values(630,630);
+replace into t1 values(629,629);
+replace into t1 values(628,628);
+replace into t1 values(627,627);
+replace into t1 values(626,626);
+replace into t1 values(625,625);
+replace into t1 values(624,624);
+replace into t1 values(623,623);
+replace into t1 values(622,622);
+replace into t1 values(621,621);
+replace into t1 values(620,620);
+replace into t1 values(619,619);
+replace into t1 values(618,618);
+replace into t1 values(617,617);
+replace into t1 values(616,616);
+replace into t1 values(615,615);
+replace into t1 values(614,614);
+replace into t1 values(613,613);
+replace into t1 values(612,612);
+replace into t1 values(611,611);
+replace into t1 values(610,610);
+replace into t1 values(609,609);
+replace into t1 values(608,608);
+replace into t1 values(607,607);
+replace into t1 values(606,606);
+replace into t1 values(605,605);
+replace into t1 values(604,604);
+replace into t1 values(603,603);
+replace into t1 values(602,602);
+replace into t1 values(601,601);
+replace into t1 values(600,600);
+replace into t1 values(599,599);
+replace into t1 values(598,598);
+replace into t1 values(597,597);
+replace into t1 values(596,596);
+replace into t1 values(595,595);
+replace into t1 values(594,594);
+replace into t1 values(593,593);
+replace into t1 values(592,592);
+replace into t1 values(591,591);
+replace into t1 values(590,590);
+replace into t1 values(589,589);
+replace into t1 values(588,588);
+replace into t1 values(587,587);
+replace into t1 values(586,586);
+replace into t1 values(585,585);
+replace into t1 values(584,584);
+replace into t1 values(583,583);
+replace into t1 values(582,582);
+replace into t1 values(581,581);
+replace into t1 values(580,580);
+replace into t1 values(579,579);
+replace into t1 values(578,578);
+replace into t1 values(577,577);
+replace into t1 values(576,576);
+replace into t1 values(575,575);
+replace into t1 values(574,574);
+replace into t1 values(573,573);
+replace into t1 values(572,572);
+replace into t1 values(571,571);
+replace into t1 values(570,570);
+replace into t1 values(569,569);
+replace into t1 values(568,568);
+replace into t1 values(567,567);
+replace into t1 values(566,566);
+replace into t1 values(565,565);
+replace into t1 values(564,564);
+replace into t1 values(563,563);
+replace into t1 values(562,562);
+replace into t1 values(561,561);
+replace into t1 values(560,560);
+replace into t1 values(559,559);
+replace into t1 values(558,558);
+replace into t1 values(557,557);
+replace into t1 values(556,556);
+replace into t1 values(555,555);
+replace into t1 values(554,554);
+replace into t1 values(553,553);
+replace into t1 values(552,552);
+replace into t1 values(551,551);
+replace into t1 values(550,550);
+replace into t1 values(549,549);
+replace into t1 values(548,548);
+replace into t1 values(547,547);
+replace into t1 values(546,546);
+replace into t1 values(545,545);
+replace into t1 values(544,544);
+replace into t1 values(543,543);
+replace into t1 values(542,542);
+replace into t1 values(541,541);
+replace into t1 values(540,540);
+replace into t1 values(539,539);
+replace into t1 values(538,538);
+replace into t1 values(537,537);
+replace into t1 values(536,536);
+replace into t1 values(535,535);
+replace into t1 values(534,534);
+replace into t1 values(533,533);
+replace into t1 values(532,532);
+replace into t1 values(531,531);
+replace into t1 values(530,530);
+replace into t1 values(529,529);
+replace into t1 values(528,528);
+replace into t1 values(527,527);
+replace into t1 values(526,526);
+replace into t1 values(525,525);
+replace into t1 values(524,524);
+replace into t1 values(523,523);
+replace into t1 values(522,522);
+replace into t1 values(521,521);
+replace into t1 values(520,520);
+replace into t1 values(519,519);
+replace into t1 values(518,518);
+replace into t1 values(517,517);
+replace into t1 values(516,516);
+replace into t1 values(515,515);
+replace into t1 values(514,514);
+replace into t1 values(513,513);
+replace into t1 values(512,512);
+replace into t1 values(511,511);
+replace into t1 values(510,510);
+replace into t1 values(509,509);
+replace into t1 values(508,508);
+replace into t1 values(507,507);
+replace into t1 values(506,506);
+replace into t1 values(505,505);
+replace into t1 values(504,504);
+replace into t1 values(503,503);
+replace into t1 values(502,502);
+replace into t1 values(501,501);
+insert into t1 values(500,500);
+insert into t1 values(499,499);
+insert into t1 values(498,498);
+insert into t1 values(497,497);
+insert into t1 values(496,496);
+insert into t1 values(495,495);
+insert into t1 values(494,494);
+insert into t1 values(493,493);
+insert into t1 values(492,492);
+insert into t1 values(491,491);
+insert into t1 values(490,490);
+insert into t1 values(489,489);
+insert into t1 values(488,488);
+insert into t1 values(487,487);
+insert into t1 values(486,486);
+insert into t1 values(485,485);
+insert into t1 values(484,484);
+insert into t1 values(483,483);
+insert into t1 values(482,482);
+insert into t1 values(481,481);
+insert into t1 values(480,480);
+insert into t1 values(479,479);
+insert into t1 values(478,478);
+insert into t1 values(477,477);
+insert into t1 values(476,476);
+insert into t1 values(475,475);
+insert into t1 values(474,474);
+insert into t1 values(473,473);
+insert into t1 values(472,472);
+insert into t1 values(471,471);
+insert into t1 values(470,470);
+insert into t1 values(469,469);
+insert into t1 values(468,468);
+insert into t1 values(467,467);
+insert into t1 values(466,466);
+insert into t1 values(465,465);
+insert into t1 values(464,464);
+insert into t1 values(463,463);
+insert into t1 values(462,462);
+insert into t1 values(461,461);
+insert into t1 values(460,460);
+insert into t1 values(459,459);
+insert into t1 values(458,458);
+insert into t1 values(457,457);
+insert into t1 values(456,456);
+insert into t1 values(455,455);
+insert into t1 values(454,454);
+insert into t1 values(453,453);
+insert into t1 values(452,452);
+insert into t1 values(451,451);
+insert into t1 values(450,450);
+insert into t1 values(449,449);
+insert into t1 values(448,448);
+insert into t1 values(447,447);
+insert into t1 values(446,446);
+insert into t1 values(445,445);
+insert into t1 values(444,444);
+insert into t1 values(443,443);
+insert into t1 values(442,442);
+insert into t1 values(441,441);
+insert into t1 values(440,440);
+insert into t1 values(439,439);
+insert into t1 values(438,438);
+insert into t1 values(437,437);
+insert into t1 values(436,436);
+insert into t1 values(435,435);
+insert into t1 values(434,434);
+insert into t1 values(433,433);
+insert into t1 values(432,432);
+insert into t1 values(431,431);
+insert into t1 values(430,430);
+insert into t1 values(429,429);
+insert into t1 values(428,428);
+insert into t1 values(427,427);
+insert into t1 values(426,426);
+insert into t1 values(425,425);
+insert into t1 values(424,424);
+insert into t1 values(423,423);
+insert into t1 values(422,422);
+insert into t1 values(421,421);
+insert into t1 values(420,420);
+insert into t1 values(419,419);
+insert into t1 values(418,418);
+insert into t1 values(417,417);
+insert into t1 values(416,416);
+insert into t1 values(415,415);
+insert into t1 values(414,414);
+insert into t1 values(413,413);
+insert into t1 values(412,412);
+insert into t1 values(411,411);
+insert into t1 values(410,410);
+insert into t1 values(409,409);
+insert into t1 values(408,408);
+insert into t1 values(407,407);
+insert into t1 values(406,406);
+insert into t1 values(405,405);
+insert into t1 values(404,404);
+insert into t1 values(403,403);
+insert into t1 values(402,402);
+insert into t1 values(401,401);
+insert into t1 values(400,400);
+insert into t1 values(399,399);
+insert into t1 values(398,398);
+insert into t1 values(397,397);
+insert into t1 values(396,396);
+insert into t1 values(395,395);
+insert into t1 values(394,394);
+insert into t1 values(393,393);
+insert into t1 values(392,392);
+insert into t1 values(391,391);
+insert into t1 values(390,390);
+insert into t1 values(389,389);
+insert into t1 values(388,388);
+insert into t1 values(387,387);
+insert into t1 values(386,386);
+insert into t1 values(385,385);
+insert into t1 values(384,384);
+insert into t1 values(383,383);
+insert into t1 values(382,382);
+insert into t1 values(381,381);
+insert into t1 values(380,380);
+insert into t1 values(379,379);
+insert into t1 values(378,378);
+insert into t1 values(377,377);
+insert into t1 values(376,376);
+insert into t1 values(375,375);
+insert into t1 values(374,374);
+insert into t1 values(373,373);
+insert into t1 values(372,372);
+insert into t1 values(371,371);
+insert into t1 values(370,370);
+insert into t1 values(369,369);
+insert into t1 values(368,368);
+insert into t1 values(367,367);
+insert into t1 values(366,366);
+insert into t1 values(365,365);
+insert into t1 values(364,364);
+insert into t1 values(363,363);
+insert into t1 values(362,362);
+insert into t1 values(361,361);
+insert into t1 values(360,360);
+insert into t1 values(359,359);
+insert into t1 values(358,358);
+insert into t1 values(357,357);
+insert into t1 values(356,356);
+insert into t1 values(355,355);
+insert into t1 values(354,354);
+insert into t1 values(353,353);
+insert into t1 values(352,352);
+insert into t1 values(351,351);
+insert into t1 values(350,350);
+insert into t1 values(349,349);
+insert into t1 values(348,348);
+insert into t1 values(347,347);
+insert into t1 values(346,346);
+insert into t1 values(345,345);
+insert into t1 values(344,344);
+insert into t1 values(343,343);
+insert into t1 values(342,342);
+insert into t1 values(341,341);
+insert into t1 values(340,340);
+insert into t1 values(339,339);
+insert into t1 values(338,338);
+insert into t1 values(337,337);
+insert into t1 values(336,336);
+insert into t1 values(335,335);
+insert into t1 values(334,334);
+insert into t1 values(333,333);
+insert into t1 values(332,332);
+insert into t1 values(331,331);
+insert into t1 values(330,330);
+insert into t1 values(329,329);
+insert into t1 values(328,328);
+insert into t1 values(327,327);
+insert into t1 values(326,326);
+insert into t1 values(325,325);
+insert into t1 values(324,324);
+insert into t1 values(323,323);
+insert into t1 values(322,322);
+insert into t1 values(321,321);
+insert into t1 values(320,320);
+insert into t1 values(319,319);
+insert into t1 values(318,318);
+insert into t1 values(317,317);
+insert into t1 values(316,316);
+insert into t1 values(315,315);
+insert into t1 values(314,314);
+insert into t1 values(313,313);
+insert into t1 values(312,312);
+insert into t1 values(311,311);
+insert into t1 values(310,310);
+insert into t1 values(309,309);
+insert into t1 values(308,308);
+insert into t1 values(307,307);
+insert into t1 values(306,306);
+insert into t1 values(305,305);
+insert into t1 values(304,304);
+insert into t1 values(303,303);
+insert into t1 values(302,302);
+insert into t1 values(301,301);
+insert into t1 values(300,300);
+insert into t1 values(299,299);
+insert into t1 values(298,298);
+insert into t1 values(297,297);
+insert into t1 values(296,296);
+insert into t1 values(295,295);
+insert into t1 values(294,294);
+insert into t1 values(293,293);
+insert into t1 values(292,292);
+insert into t1 values(291,291);
+insert into t1 values(290,290);
+insert into t1 values(289,289);
+insert into t1 values(288,288);
+insert into t1 values(287,287);
+insert into t1 values(286,286);
+insert into t1 values(285,285);
+insert into t1 values(284,284);
+insert into t1 values(283,283);
+insert into t1 values(282,282);
+insert into t1 values(281,281);
+insert into t1 values(280,280);
+insert into t1 values(279,279);
+insert into t1 values(278,278);
+insert into t1 values(277,277);
+insert into t1 values(276,276);
+insert into t1 values(275,275);
+insert into t1 values(274,274);
+insert into t1 values(273,273);
+insert into t1 values(272,272);
+insert into t1 values(271,271);
+insert into t1 values(270,270);
+insert into t1 values(269,269);
+insert into t1 values(268,268);
+insert into t1 values(267,267);
+insert into t1 values(266,266);
+insert into t1 values(265,265);
+insert into t1 values(264,264);
+insert into t1 values(263,263);
+insert into t1 values(262,262);
+insert into t1 values(261,261);
+insert into t1 values(260,260);
+insert into t1 values(259,259);
+insert into t1 values(258,258);
+insert into t1 values(257,257);
+insert into t1 values(256,256);
+insert into t1 values(255,255);
+insert into t1 values(254,254);
+insert into t1 values(253,253);
+insert into t1 values(252,252);
+insert into t1 values(251,251);
+insert into t1 values(250,250);
+insert into t1 values(249,249);
+insert into t1 values(248,248);
+insert into t1 values(247,247);
+insert into t1 values(246,246);
+insert into t1 values(245,245);
+insert into t1 values(244,244);
+insert into t1 values(243,243);
+insert into t1 values(242,242);
+insert into t1 values(241,241);
+insert into t1 values(240,240);
+insert into t1 values(239,239);
+insert into t1 values(238,238);
+insert into t1 values(237,237);
+insert into t1 values(236,236);
+insert into t1 values(235,235);
+insert into t1 values(234,234);
+insert into t1 values(233,233);
+insert into t1 values(232,232);
+insert into t1 values(231,231);
+insert into t1 values(230,230);
+insert into t1 values(229,229);
+insert into t1 values(228,228);
+insert into t1 values(227,227);
+insert into t1 values(226,226);
+insert into t1 values(225,225);
+insert into t1 values(224,224);
+insert into t1 values(223,223);
+insert into t1 values(222,222);
+insert into t1 values(221,221);
+insert into t1 values(220,220);
+insert into t1 values(219,219);
+insert into t1 values(218,218);
+insert into t1 values(217,217);
+insert into t1 values(216,216);
+insert into t1 values(215,215);
+insert into t1 values(214,214);
+insert into t1 values(213,213);
+insert into t1 values(212,212);
+insert into t1 values(211,211);
+insert into t1 values(210,210);
+insert into t1 values(209,209);
+insert into t1 values(208,208);
+insert into t1 values(207,207);
+insert into t1 values(206,206);
+insert into t1 values(205,205);
+insert into t1 values(204,204);
+insert into t1 values(203,203);
+insert into t1 values(202,202);
+insert into t1 values(201,201);
+insert into t1 values(200,200);
+insert into t1 values(199,199);
+insert into t1 values(198,198);
+insert into t1 values(197,197);
+insert into t1 values(196,196);
+insert into t1 values(195,195);
+insert into t1 values(194,194);
+insert into t1 values(193,193);
+insert into t1 values(192,192);
+insert into t1 values(191,191);
+insert into t1 values(190,190);
+insert into t1 values(189,189);
+insert into t1 values(188,188);
+insert into t1 values(187,187);
+insert into t1 values(186,186);
+insert into t1 values(185,185);
+insert into t1 values(184,184);
+insert into t1 values(183,183);
+insert into t1 values(182,182);
+insert into t1 values(181,181);
+insert into t1 values(180,180);
+insert into t1 values(179,179);
+insert into t1 values(178,178);
+insert into t1 values(177,177);
+insert into t1 values(176,176);
+insert into t1 values(175,175);
+insert into t1 values(174,174);
+insert into t1 values(173,173);
+insert into t1 values(172,172);
+insert into t1 values(171,171);
+insert into t1 values(170,170);
+insert into t1 values(169,169);
+insert into t1 values(168,168);
+insert into t1 values(167,167);
+insert into t1 values(166,166);
+insert into t1 values(165,165);
+insert into t1 values(164,164);
+insert into t1 values(163,163);
+insert into t1 values(162,162);
+insert into t1 values(161,161);
+insert into t1 values(160,160);
+insert into t1 values(159,159);
+insert into t1 values(158,158);
+insert into t1 values(157,157);
+insert into t1 values(156,156);
+insert into t1 values(155,155);
+insert into t1 values(154,154);
+insert into t1 values(153,153);
+insert into t1 values(152,152);
+insert into t1 values(151,151);
+insert into t1 values(150,150);
+insert into t1 values(149,149);
+insert into t1 values(148,148);
+insert into t1 values(147,147);
+insert into t1 values(146,146);
+insert into t1 values(145,145);
+insert into t1 values(144,144);
+insert into t1 values(143,143);
+insert into t1 values(142,142);
+insert into t1 values(141,141);
+insert into t1 values(140,140);
+insert into t1 values(139,139);
+insert into t1 values(138,138);
+insert into t1 values(137,137);
+insert into t1 values(136,136);
+insert into t1 values(135,135);
+insert into t1 values(134,134);
+insert into t1 values(133,133);
+insert into t1 values(132,132);
+insert into t1 values(131,131);
+insert into t1 values(130,130);
+insert into t1 values(129,129);
+insert into t1 values(128,128);
+insert into t1 values(127,127);
+insert into t1 values(126,126);
+insert into t1 values(125,125);
+insert into t1 values(124,124);
+insert into t1 values(123,123);
+insert into t1 values(122,122);
+insert into t1 values(121,121);
+insert into t1 values(120,120);
+insert into t1 values(119,119);
+insert into t1 values(118,118);
+insert into t1 values(117,117);
+insert into t1 values(116,116);
+insert into t1 values(115,115);
+insert into t1 values(114,114);
+insert into t1 values(113,113);
+insert into t1 values(112,112);
+insert into t1 values(111,111);
+insert into t1 values(110,110);
+insert into t1 values(109,109);
+insert into t1 values(108,108);
+insert into t1 values(107,107);
+insert into t1 values(106,106);
+insert into t1 values(105,105);
+insert into t1 values(104,104);
+insert into t1 values(103,103);
+insert into t1 values(102,102);
+insert into t1 values(101,101);
+insert into t1 values(100,100);
+insert into t1 values(99,99);
+insert into t1 values(98,98);
+insert into t1 values(97,97);
+insert into t1 values(96,96);
+insert into t1 values(95,95);
+insert into t1 values(94,94);
+insert into t1 values(93,93);
+insert into t1 values(92,92);
+insert into t1 values(91,91);
+insert into t1 values(90,90);
+insert into t1 values(89,89);
+insert into t1 values(88,88);
+insert into t1 values(87,87);
+insert into t1 values(86,86);
+insert into t1 values(85,85);
+insert into t1 values(84,84);
+insert into t1 values(83,83);
+insert into t1 values(82,82);
+insert into t1 values(81,81);
+insert into t1 values(80,80);
+insert into t1 values(79,79);
+insert into t1 values(78,78);
+insert into t1 values(77,77);
+insert into t1 values(76,76);
+insert into t1 values(75,75);
+insert into t1 values(74,74);
+insert into t1 values(73,73);
+insert into t1 values(72,72);
+insert into t1 values(71,71);
+insert into t1 values(70,70);
+insert into t1 values(69,69);
+insert into t1 values(68,68);
+insert into t1 values(67,67);
+insert into t1 values(66,66);
+insert into t1 values(65,65);
+insert into t1 values(64,64);
+insert into t1 values(63,63);
+insert into t1 values(62,62);
+insert into t1 values(61,61);
+insert into t1 values(60,60);
+insert into t1 values(59,59);
+insert into t1 values(58,58);
+insert into t1 values(57,57);
+insert into t1 values(56,56);
+insert into t1 values(55,55);
+insert into t1 values(54,54);
+insert into t1 values(53,53);
+insert into t1 values(52,52);
+insert into t1 values(51,51);
+insert into t1 values(50,50);
+insert into t1 values(49,49);
+insert into t1 values(48,48);
+insert into t1 values(47,47);
+insert into t1 values(46,46);
+insert into t1 values(45,45);
+insert into t1 values(44,44);
+insert into t1 values(43,43);
+insert into t1 values(42,42);
+insert into t1 values(41,41);
+insert into t1 values(40,40);
+insert into t1 values(39,39);
+insert into t1 values(38,38);
+insert into t1 values(37,37);
+insert into t1 values(36,36);
+insert into t1 values(35,35);
+insert into t1 values(34,34);
+insert into t1 values(33,33);
+insert into t1 values(32,32);
+insert into t1 values(31,31);
+insert into t1 values(30,30);
+insert into t1 values(29,29);
+insert into t1 values(28,28);
+insert into t1 values(27,27);
+insert into t1 values(26,26);
+insert into t1 values(25,25);
+insert into t1 values(24,24);
+insert into t1 values(23,23);
+insert into t1 values(22,22);
+insert into t1 values(21,21);
+insert into t1 values(20,20);
+insert into t1 values(19,19);
+insert into t1 values(18,18);
+insert into t1 values(17,17);
+insert into t1 values(16,16);
+insert into t1 values(15,15);
+insert into t1 values(14,14);
+insert into t1 values(13,13);
+insert into t1 values(12,12);
+insert into t1 values(11,11);
+insert into t1 values(10,10);
+insert into t1 values(9,9);
+insert into t1 values(8,8);
+insert into t1 values(7,7);
+insert into t1 values(6,6);
+insert into t1 values(5,5);
+insert into t1 values(4,4);
+insert into t1 values(3,3);
+insert into t1 values(2,2);
+insert into t1 values(1,1);
+update t1 set c2=1 where c1=1000;
+update t1 set c2=1 where c1=999;
+update t1 set c2=1 where c1=998;
+update t1 set c2=1 where c1=997;
+update t1 set c2=1 where c1=996;
+update t1 set c2=1 where c1=995;
+update t1 set c2=1 where c1=994;
+update t1 set c2=1 where c1=993;
+update t1 set c2=1 where c1=992;
+update t1 set c2=1 where c1=991;
+update t1 set c2=1 where c1=990;
+update t1 set c2=1 where c1=989;
+update t1 set c2=1 where c1=988;
+update t1 set c2=1 where c1=987;
+update t1 set c2=1 where c1=986;
+update t1 set c2=1 where c1=985;
+update t1 set c2=1 where c1=984;
+update t1 set c2=1 where c1=983;
+update t1 set c2=1 where c1=982;
+update t1 set c2=1 where c1=981;
+update t1 set c2=1 where c1=980;
+update t1 set c2=1 where c1=979;
+update t1 set c2=1 where c1=978;
+update t1 set c2=1 where c1=977;
+update t1 set c2=1 where c1=976;
+update t1 set c2=1 where c1=975;
+update t1 set c2=1 where c1=974;
+update t1 set c2=1 where c1=973;
+update t1 set c2=1 where c1=972;
+update t1 set c2=1 where c1=971;
+update t1 set c2=1 where c1=970;
+update t1 set c2=1 where c1=969;
+update t1 set c2=1 where c1=968;
+update t1 set c2=1 where c1=967;
+update t1 set c2=1 where c1=966;
+update t1 set c2=1 where c1=965;
+update t1 set c2=1 where c1=964;
+update t1 set c2=1 where c1=963;
+update t1 set c2=1 where c1=962;
+update t1 set c2=1 where c1=961;
+update t1 set c2=1 where c1=960;
+update t1 set c2=1 where c1=959;
+update t1 set c2=1 where c1=958;
+update t1 set c2=1 where c1=957;
+update t1 set c2=1 where c1=956;
+update t1 set c2=1 where c1=955;
+update t1 set c2=1 where c1=954;
+update t1 set c2=1 where c1=953;
+update t1 set c2=1 where c1=952;
+update t1 set c2=1 where c1=951;
+update t1 set c2=1 where c1=950;
+update t1 set c2=1 where c1=949;
+update t1 set c2=1 where c1=948;
+update t1 set c2=1 where c1=947;
+update t1 set c2=1 where c1=946;
+update t1 set c2=1 where c1=945;
+update t1 set c2=1 where c1=944;
+update t1 set c2=1 where c1=943;
+update t1 set c2=1 where c1=942;
+update t1 set c2=1 where c1=941;
+update t1 set c2=1 where c1=940;
+update t1 set c2=1 where c1=939;
+update t1 set c2=1 where c1=938;
+update t1 set c2=1 where c1=937;
+update t1 set c2=1 where c1=936;
+update t1 set c2=1 where c1=935;
+update t1 set c2=1 where c1=934;
+update t1 set c2=1 where c1=933;
+update t1 set c2=1 where c1=932;
+update t1 set c2=1 where c1=931;
+update t1 set c2=1 where c1=930;
+update t1 set c2=1 where c1=929;
+update t1 set c2=1 where c1=928;
+update t1 set c2=1 where c1=927;
+update t1 set c2=1 where c1=926;
+update t1 set c2=1 where c1=925;
+update t1 set c2=1 where c1=924;
+update t1 set c2=1 where c1=923;
+update t1 set c2=1 where c1=922;
+update t1 set c2=1 where c1=921;
+update t1 set c2=1 where c1=920;
+update t1 set c2=1 where c1=919;
+update t1 set c2=1 where c1=918;
+update t1 set c2=1 where c1=917;
+update t1 set c2=1 where c1=916;
+update t1 set c2=1 where c1=915;
+update t1 set c2=1 where c1=914;
+update t1 set c2=1 where c1=913;
+update t1 set c2=1 where c1=912;
+update t1 set c2=1 where c1=911;
+update t1 set c2=1 where c1=910;
+update t1 set c2=1 where c1=909;
+update t1 set c2=1 where c1=908;
+update t1 set c2=1 where c1=907;
+update t1 set c2=1 where c1=906;
+update t1 set c2=1 where c1=905;
+update t1 set c2=1 where c1=904;
+update t1 set c2=1 where c1=903;
+update t1 set c2=1 where c1=902;
+update t1 set c2=1 where c1=901;
+update t1 set c2=1 where c1=900;
+update t1 set c2=1 where c1=899;
+update t1 set c2=1 where c1=898;
+update t1 set c2=1 where c1=897;
+update t1 set c2=1 where c1=896;
+update t1 set c2=1 where c1=895;
+update t1 set c2=1 where c1=894;
+update t1 set c2=1 where c1=893;
+update t1 set c2=1 where c1=892;
+update t1 set c2=1 where c1=891;
+update t1 set c2=1 where c1=890;
+update t1 set c2=1 where c1=889;
+update t1 set c2=1 where c1=888;
+update t1 set c2=1 where c1=887;
+update t1 set c2=1 where c1=886;
+update t1 set c2=1 where c1=885;
+update t1 set c2=1 where c1=884;
+update t1 set c2=1 where c1=883;
+update t1 set c2=1 where c1=882;
+update t1 set c2=1 where c1=881;
+update t1 set c2=1 where c1=880;
+update t1 set c2=1 where c1=879;
+update t1 set c2=1 where c1=878;
+update t1 set c2=1 where c1=877;
+update t1 set c2=1 where c1=876;
+update t1 set c2=1 where c1=875;
+update t1 set c2=1 where c1=874;
+update t1 set c2=1 where c1=873;
+update t1 set c2=1 where c1=872;
+update t1 set c2=1 where c1=871;
+update t1 set c2=1 where c1=870;
+update t1 set c2=1 where c1=869;
+update t1 set c2=1 where c1=868;
+update t1 set c2=1 where c1=867;
+update t1 set c2=1 where c1=866;
+update t1 set c2=1 where c1=865;
+update t1 set c2=1 where c1=864;
+update t1 set c2=1 where c1=863;
+update t1 set c2=1 where c1=862;
+update t1 set c2=1 where c1=861;
+update t1 set c2=1 where c1=860;
+update t1 set c2=1 where c1=859;
+update t1 set c2=1 where c1=858;
+update t1 set c2=1 where c1=857;
+update t1 set c2=1 where c1=856;
+update t1 set c2=1 where c1=855;
+update t1 set c2=1 where c1=854;
+update t1 set c2=1 where c1=853;
+update t1 set c2=1 where c1=852;
+update t1 set c2=1 where c1=851;
+update t1 set c2=1 where c1=850;
+update t1 set c2=1 where c1=849;
+update t1 set c2=1 where c1=848;
+update t1 set c2=1 where c1=847;
+update t1 set c2=1 where c1=846;
+update t1 set c2=1 where c1=845;
+update t1 set c2=1 where c1=844;
+update t1 set c2=1 where c1=843;
+update t1 set c2=1 where c1=842;
+update t1 set c2=1 where c1=841;
+update t1 set c2=1 where c1=840;
+update t1 set c2=1 where c1=839;
+update t1 set c2=1 where c1=838;
+update t1 set c2=1 where c1=837;
+update t1 set c2=1 where c1=836;
+update t1 set c2=1 where c1=835;
+update t1 set c2=1 where c1=834;
+update t1 set c2=1 where c1=833;
+update t1 set c2=1 where c1=832;
+update t1 set c2=1 where c1=831;
+update t1 set c2=1 where c1=830;
+update t1 set c2=1 where c1=829;
+update t1 set c2=1 where c1=828;
+update t1 set c2=1 where c1=827;
+update t1 set c2=1 where c1=826;
+update t1 set c2=1 where c1=825;
+update t1 set c2=1 where c1=824;
+update t1 set c2=1 where c1=823;
+update t1 set c2=1 where c1=822;
+update t1 set c2=1 where c1=821;
+update t1 set c2=1 where c1=820;
+update t1 set c2=1 where c1=819;
+update t1 set c2=1 where c1=818;
+update t1 set c2=1 where c1=817;
+update t1 set c2=1 where c1=816;
+update t1 set c2=1 where c1=815;
+update t1 set c2=1 where c1=814;
+update t1 set c2=1 where c1=813;
+update t1 set c2=1 where c1=812;
+update t1 set c2=1 where c1=811;
+update t1 set c2=1 where c1=810;
+update t1 set c2=1 where c1=809;
+update t1 set c2=1 where c1=808;
+update t1 set c2=1 where c1=807;
+update t1 set c2=1 where c1=806;
+update t1 set c2=1 where c1=805;
+update t1 set c2=1 where c1=804;
+update t1 set c2=1 where c1=803;
+update t1 set c2=1 where c1=802;
+update t1 set c2=1 where c1=801;
+update t1 set c2=1 where c1=800;
+update t1 set c2=1 where c1=799;
+update t1 set c2=1 where c1=798;
+update t1 set c2=1 where c1=797;
+update t1 set c2=1 where c1=796;
+update t1 set c2=1 where c1=795;
+update t1 set c2=1 where c1=794;
+update t1 set c2=1 where c1=793;
+update t1 set c2=1 where c1=792;
+update t1 set c2=1 where c1=791;
+update t1 set c2=1 where c1=790;
+update t1 set c2=1 where c1=789;
+update t1 set c2=1 where c1=788;
+update t1 set c2=1 where c1=787;
+update t1 set c2=1 where c1=786;
+update t1 set c2=1 where c1=785;
+update t1 set c2=1 where c1=784;
+update t1 set c2=1 where c1=783;
+update t1 set c2=1 where c1=782;
+update t1 set c2=1 where c1=781;
+update t1 set c2=1 where c1=780;
+update t1 set c2=1 where c1=779;
+update t1 set c2=1 where c1=778;
+update t1 set c2=1 where c1=777;
+update t1 set c2=1 where c1=776;
+update t1 set c2=1 where c1=775;
+update t1 set c2=1 where c1=774;
+update t1 set c2=1 where c1=773;
+update t1 set c2=1 where c1=772;
+update t1 set c2=1 where c1=771;
+update t1 set c2=1 where c1=770;
+update t1 set c2=1 where c1=769;
+update t1 set c2=1 where c1=768;
+update t1 set c2=1 where c1=767;
+update t1 set c2=1 where c1=766;
+update t1 set c2=1 where c1=765;
+update t1 set c2=1 where c1=764;
+update t1 set c2=1 where c1=763;
+update t1 set c2=1 where c1=762;
+update t1 set c2=1 where c1=761;
+update t1 set c2=1 where c1=760;
+update t1 set c2=1 where c1=759;
+update t1 set c2=1 where c1=758;
+update t1 set c2=1 where c1=757;
+update t1 set c2=1 where c1=756;
+update t1 set c2=1 where c1=755;
+update t1 set c2=1 where c1=754;
+update t1 set c2=1 where c1=753;
+update t1 set c2=1 where c1=752;
+update t1 set c2=1 where c1=751;
+update t1 set c2=1 where c1=750;
+update t1 set c2=1 where c1=749;
+update t1 set c2=1 where c1=748;
+update t1 set c2=1 where c1=747;
+update t1 set c2=1 where c1=746;
+update t1 set c2=1 where c1=745;
+update t1 set c2=1 where c1=744;
+update t1 set c2=1 where c1=743;
+update t1 set c2=1 where c1=742;
+update t1 set c2=1 where c1=741;
+update t1 set c2=1 where c1=740;
+update t1 set c2=1 where c1=739;
+update t1 set c2=1 where c1=738;
+update t1 set c2=1 where c1=737;
+update t1 set c2=1 where c1=736;
+update t1 set c2=1 where c1=735;
+update t1 set c2=1 where c1=734;
+update t1 set c2=1 where c1=733;
+update t1 set c2=1 where c1=732;
+update t1 set c2=1 where c1=731;
+update t1 set c2=1 where c1=730;
+update t1 set c2=1 where c1=729;
+update t1 set c2=1 where c1=728;
+update t1 set c2=1 where c1=727;
+update t1 set c2=1 where c1=726;
+update t1 set c2=1 where c1=725;
+update t1 set c2=1 where c1=724;
+update t1 set c2=1 where c1=723;
+update t1 set c2=1 where c1=722;
+update t1 set c2=1 where c1=721;
+update t1 set c2=1 where c1=720;
+update t1 set c2=1 where c1=719;
+update t1 set c2=1 where c1=718;
+update t1 set c2=1 where c1=717;
+update t1 set c2=1 where c1=716;
+update t1 set c2=1 where c1=715;
+update t1 set c2=1 where c1=714;
+update t1 set c2=1 where c1=713;
+update t1 set c2=1 where c1=712;
+update t1 set c2=1 where c1=711;
+update t1 set c2=1 where c1=710;
+update t1 set c2=1 where c1=709;
+update t1 set c2=1 where c1=708;
+update t1 set c2=1 where c1=707;
+update t1 set c2=1 where c1=706;
+update t1 set c2=1 where c1=705;
+update t1 set c2=1 where c1=704;
+update t1 set c2=1 where c1=703;
+update t1 set c2=1 where c1=702;
+update t1 set c2=1 where c1=701;
+update t1 set c2=1 where c1=700;
+update t1 set c2=1 where c1=699;
+update t1 set c2=1 where c1=698;
+update t1 set c2=1 where c1=697;
+update t1 set c2=1 where c1=696;
+update t1 set c2=1 where c1=695;
+update t1 set c2=1 where c1=694;
+update t1 set c2=1 where c1=693;
+update t1 set c2=1 where c1=692;
+update t1 set c2=1 where c1=691;
+update t1 set c2=1 where c1=690;
+update t1 set c2=1 where c1=689;
+update t1 set c2=1 where c1=688;
+update t1 set c2=1 where c1=687;
+update t1 set c2=1 where c1=686;
+update t1 set c2=1 where c1=685;
+update t1 set c2=1 where c1=684;
+update t1 set c2=1 where c1=683;
+update t1 set c2=1 where c1=682;
+update t1 set c2=1 where c1=681;
+update t1 set c2=1 where c1=680;
+update t1 set c2=1 where c1=679;
+update t1 set c2=1 where c1=678;
+update t1 set c2=1 where c1=677;
+update t1 set c2=1 where c1=676;
+update t1 set c2=1 where c1=675;
+update t1 set c2=1 where c1=674;
+update t1 set c2=1 where c1=673;
+update t1 set c2=1 where c1=672;
+update t1 set c2=1 where c1=671;
+update t1 set c2=1 where c1=670;
+update t1 set c2=1 where c1=669;
+update t1 set c2=1 where c1=668;
+update t1 set c2=1 where c1=667;
+update t1 set c2=1 where c1=666;
+update t1 set c2=1 where c1=665;
+update t1 set c2=1 where c1=664;
+update t1 set c2=1 where c1=663;
+update t1 set c2=1 where c1=662;
+update t1 set c2=1 where c1=661;
+update t1 set c2=1 where c1=660;
+update t1 set c2=1 where c1=659;
+update t1 set c2=1 where c1=658;
+update t1 set c2=1 where c1=657;
+update t1 set c2=1 where c1=656;
+update t1 set c2=1 where c1=655;
+update t1 set c2=1 where c1=654;
+update t1 set c2=1 where c1=653;
+update t1 set c2=1 where c1=652;
+update t1 set c2=1 where c1=651;
+update t1 set c2=1 where c1=650;
+update t1 set c2=1 where c1=649;
+update t1 set c2=1 where c1=648;
+update t1 set c2=1 where c1=647;
+update t1 set c2=1 where c1=646;
+update t1 set c2=1 where c1=645;
+update t1 set c2=1 where c1=644;
+update t1 set c2=1 where c1=643;
+update t1 set c2=1 where c1=642;
+update t1 set c2=1 where c1=641;
+update t1 set c2=1 where c1=640;
+update t1 set c2=1 where c1=639;
+update t1 set c2=1 where c1=638;
+update t1 set c2=1 where c1=637;
+update t1 set c2=1 where c1=636;
+update t1 set c2=1 where c1=635;
+update t1 set c2=1 where c1=634;
+update t1 set c2=1 where c1=633;
+update t1 set c2=1 where c1=632;
+update t1 set c2=1 where c1=631;
+update t1 set c2=1 where c1=630;
+update t1 set c2=1 where c1=629;
+update t1 set c2=1 where c1=628;
+update t1 set c2=1 where c1=627;
+update t1 set c2=1 where c1=626;
+update t1 set c2=1 where c1=625;
+update t1 set c2=1 where c1=624;
+update t1 set c2=1 where c1=623;
+update t1 set c2=1 where c1=622;
+update t1 set c2=1 where c1=621;
+update t1 set c2=1 where c1=620;
+update t1 set c2=1 where c1=619;
+update t1 set c2=1 where c1=618;
+update t1 set c2=1 where c1=617;
+update t1 set c2=1 where c1=616;
+update t1 set c2=1 where c1=615;
+update t1 set c2=1 where c1=614;
+update t1 set c2=1 where c1=613;
+update t1 set c2=1 where c1=612;
+update t1 set c2=1 where c1=611;
+update t1 set c2=1 where c1=610;
+update t1 set c2=1 where c1=609;
+update t1 set c2=1 where c1=608;
+update t1 set c2=1 where c1=607;
+update t1 set c2=1 where c1=606;
+update t1 set c2=1 where c1=605;
+update t1 set c2=1 where c1=604;
+update t1 set c2=1 where c1=603;
+update t1 set c2=1 where c1=602;
+update t1 set c2=1 where c1=601;
+update t1 set c2=1 where c1=600;
+update t1 set c2=1 where c1=599;
+update t1 set c2=1 where c1=598;
+update t1 set c2=1 where c1=597;
+update t1 set c2=1 where c1=596;
+update t1 set c2=1 where c1=595;
+update t1 set c2=1 where c1=594;
+update t1 set c2=1 where c1=593;
+update t1 set c2=1 where c1=592;
+update t1 set c2=1 where c1=591;
+update t1 set c2=1 where c1=590;
+update t1 set c2=1 where c1=589;
+update t1 set c2=1 where c1=588;
+update t1 set c2=1 where c1=587;
+update t1 set c2=1 where c1=586;
+update t1 set c2=1 where c1=585;
+update t1 set c2=1 where c1=584;
+update t1 set c2=1 where c1=583;
+update t1 set c2=1 where c1=582;
+update t1 set c2=1 where c1=581;
+update t1 set c2=1 where c1=580;
+update t1 set c2=1 where c1=579;
+update t1 set c2=1 where c1=578;
+update t1 set c2=1 where c1=577;
+update t1 set c2=1 where c1=576;
+update t1 set c2=1 where c1=575;
+update t1 set c2=1 where c1=574;
+update t1 set c2=1 where c1=573;
+update t1 set c2=1 where c1=572;
+update t1 set c2=1 where c1=571;
+update t1 set c2=1 where c1=570;
+update t1 set c2=1 where c1=569;
+update t1 set c2=1 where c1=568;
+update t1 set c2=1 where c1=567;
+update t1 set c2=1 where c1=566;
+update t1 set c2=1 where c1=565;
+update t1 set c2=1 where c1=564;
+update t1 set c2=1 where c1=563;
+update t1 set c2=1 where c1=562;
+update t1 set c2=1 where c1=561;
+update t1 set c2=1 where c1=560;
+update t1 set c2=1 where c1=559;
+update t1 set c2=1 where c1=558;
+update t1 set c2=1 where c1=557;
+update t1 set c2=1 where c1=556;
+update t1 set c2=1 where c1=555;
+update t1 set c2=1 where c1=554;
+update t1 set c2=1 where c1=553;
+update t1 set c2=1 where c1=552;
+update t1 set c2=1 where c1=551;
+update t1 set c2=1 where c1=550;
+update t1 set c2=1 where c1=549;
+update t1 set c2=1 where c1=548;
+update t1 set c2=1 where c1=547;
+update t1 set c2=1 where c1=546;
+update t1 set c2=1 where c1=545;
+update t1 set c2=1 where c1=544;
+update t1 set c2=1 where c1=543;
+update t1 set c2=1 where c1=542;
+update t1 set c2=1 where c1=541;
+update t1 set c2=1 where c1=540;
+update t1 set c2=1 where c1=539;
+update t1 set c2=1 where c1=538;
+update t1 set c2=1 where c1=537;
+update t1 set c2=1 where c1=536;
+update t1 set c2=1 where c1=535;
+update t1 set c2=1 where c1=534;
+update t1 set c2=1 where c1=533;
+update t1 set c2=1 where c1=532;
+update t1 set c2=1 where c1=531;
+update t1 set c2=1 where c1=530;
+update t1 set c2=1 where c1=529;
+update t1 set c2=1 where c1=528;
+update t1 set c2=1 where c1=527;
+update t1 set c2=1 where c1=526;
+update t1 set c2=1 where c1=525;
+update t1 set c2=1 where c1=524;
+update t1 set c2=1 where c1=523;
+update t1 set c2=1 where c1=522;
+update t1 set c2=1 where c1=521;
+update t1 set c2=1 where c1=520;
+update t1 set c2=1 where c1=519;
+update t1 set c2=1 where c1=518;
+update t1 set c2=1 where c1=517;
+update t1 set c2=1 where c1=516;
+update t1 set c2=1 where c1=515;
+update t1 set c2=1 where c1=514;
+update t1 set c2=1 where c1=513;
+update t1 set c2=1 where c1=512;
+update t1 set c2=1 where c1=511;
+update t1 set c2=1 where c1=510;
+update t1 set c2=1 where c1=509;
+update t1 set c2=1 where c1=508;
+update t1 set c2=1 where c1=507;
+update t1 set c2=1 where c1=506;
+update t1 set c2=1 where c1=505;
+update t1 set c2=1 where c1=504;
+update t1 set c2=1 where c1=503;
+update t1 set c2=1 where c1=502;
+update t1 set c2=1 where c1=501;
+delete from t1 where c1=500;
+delete from t1 where c1=499;
+delete from t1 where c1=498;
+delete from t1 where c1=497;
+delete from t1 where c1=496;
+delete from t1 where c1=495;
+delete from t1 where c1=494;
+delete from t1 where c1=493;
+delete from t1 where c1=492;
+delete from t1 where c1=491;
+delete from t1 where c1=490;
+delete from t1 where c1=489;
+delete from t1 where c1=488;
+delete from t1 where c1=487;
+delete from t1 where c1=486;
+delete from t1 where c1=485;
+delete from t1 where c1=484;
+delete from t1 where c1=483;
+delete from t1 where c1=482;
+delete from t1 where c1=481;
+delete from t1 where c1=480;
+delete from t1 where c1=479;
+delete from t1 where c1=478;
+delete from t1 where c1=477;
+delete from t1 where c1=476;
+delete from t1 where c1=475;
+delete from t1 where c1=474;
+delete from t1 where c1=473;
+delete from t1 where c1=472;
+delete from t1 where c1=471;
+delete from t1 where c1=470;
+delete from t1 where c1=469;
+delete from t1 where c1=468;
+delete from t1 where c1=467;
+delete from t1 where c1=466;
+delete from t1 where c1=465;
+delete from t1 where c1=464;
+delete from t1 where c1=463;
+delete from t1 where c1=462;
+delete from t1 where c1=461;
+delete from t1 where c1=460;
+delete from t1 where c1=459;
+delete from t1 where c1=458;
+delete from t1 where c1=457;
+delete from t1 where c1=456;
+delete from t1 where c1=455;
+delete from t1 where c1=454;
+delete from t1 where c1=453;
+delete from t1 where c1=452;
+delete from t1 where c1=451;
+delete from t1 where c1=450;
+delete from t1 where c1=449;
+delete from t1 where c1=448;
+delete from t1 where c1=447;
+delete from t1 where c1=446;
+delete from t1 where c1=445;
+delete from t1 where c1=444;
+delete from t1 where c1=443;
+delete from t1 where c1=442;
+delete from t1 where c1=441;
+delete from t1 where c1=440;
+delete from t1 where c1=439;
+delete from t1 where c1=438;
+delete from t1 where c1=437;
+delete from t1 where c1=436;
+delete from t1 where c1=435;
+delete from t1 where c1=434;
+delete from t1 where c1=433;
+delete from t1 where c1=432;
+delete from t1 where c1=431;
+delete from t1 where c1=430;
+delete from t1 where c1=429;
+delete from t1 where c1=428;
+delete from t1 where c1=427;
+delete from t1 where c1=426;
+delete from t1 where c1=425;
+delete from t1 where c1=424;
+delete from t1 where c1=423;
+delete from t1 where c1=422;
+delete from t1 where c1=421;
+delete from t1 where c1=420;
+delete from t1 where c1=419;
+delete from t1 where c1=418;
+delete from t1 where c1=417;
+delete from t1 where c1=416;
+delete from t1 where c1=415;
+delete from t1 where c1=414;
+delete from t1 where c1=413;
+delete from t1 where c1=412;
+delete from t1 where c1=411;
+delete from t1 where c1=410;
+delete from t1 where c1=409;
+delete from t1 where c1=408;
+delete from t1 where c1=407;
+delete from t1 where c1=406;
+delete from t1 where c1=405;
+delete from t1 where c1=404;
+delete from t1 where c1=403;
+delete from t1 where c1=402;
+delete from t1 where c1=401;
+delete from t1 where c1=400;
+delete from t1 where c1=399;
+delete from t1 where c1=398;
+delete from t1 where c1=397;
+delete from t1 where c1=396;
+delete from t1 where c1=395;
+delete from t1 where c1=394;
+delete from t1 where c1=393;
+delete from t1 where c1=392;
+delete from t1 where c1=391;
+delete from t1 where c1=390;
+delete from t1 where c1=389;
+delete from t1 where c1=388;
+delete from t1 where c1=387;
+delete from t1 where c1=386;
+delete from t1 where c1=385;
+delete from t1 where c1=384;
+delete from t1 where c1=383;
+delete from t1 where c1=382;
+delete from t1 where c1=381;
+delete from t1 where c1=380;
+delete from t1 where c1=379;
+delete from t1 where c1=378;
+delete from t1 where c1=377;
+delete from t1 where c1=376;
+delete from t1 where c1=375;
+delete from t1 where c1=374;
+delete from t1 where c1=373;
+delete from t1 where c1=372;
+delete from t1 where c1=371;
+delete from t1 where c1=370;
+delete from t1 where c1=369;
+delete from t1 where c1=368;
+delete from t1 where c1=367;
+delete from t1 where c1=366;
+delete from t1 where c1=365;
+delete from t1 where c1=364;
+delete from t1 where c1=363;
+delete from t1 where c1=362;
+delete from t1 where c1=361;
+delete from t1 where c1=360;
+delete from t1 where c1=359;
+delete from t1 where c1=358;
+delete from t1 where c1=357;
+delete from t1 where c1=356;
+delete from t1 where c1=355;
+delete from t1 where c1=354;
+delete from t1 where c1=353;
+delete from t1 where c1=352;
+delete from t1 where c1=351;
+delete from t1 where c1=350;
+delete from t1 where c1=349;
+delete from t1 where c1=348;
+delete from t1 where c1=347;
+delete from t1 where c1=346;
+delete from t1 where c1=345;
+delete from t1 where c1=344;
+delete from t1 where c1=343;
+delete from t1 where c1=342;
+delete from t1 where c1=341;
+delete from t1 where c1=340;
+delete from t1 where c1=339;
+delete from t1 where c1=338;
+delete from t1 where c1=337;
+delete from t1 where c1=336;
+delete from t1 where c1=335;
+delete from t1 where c1=334;
+delete from t1 where c1=333;
+delete from t1 where c1=332;
+delete from t1 where c1=331;
+delete from t1 where c1=330;
+delete from t1 where c1=329;
+delete from t1 where c1=328;
+delete from t1 where c1=327;
+delete from t1 where c1=326;
+delete from t1 where c1=325;
+delete from t1 where c1=324;
+delete from t1 where c1=323;
+delete from t1 where c1=322;
+delete from t1 where c1=321;
+delete from t1 where c1=320;
+delete from t1 where c1=319;
+delete from t1 where c1=318;
+delete from t1 where c1=317;
+delete from t1 where c1=316;
+delete from t1 where c1=315;
+delete from t1 where c1=314;
+delete from t1 where c1=313;
+delete from t1 where c1=312;
+delete from t1 where c1=311;
+delete from t1 where c1=310;
+delete from t1 where c1=309;
+delete from t1 where c1=308;
+delete from t1 where c1=307;
+delete from t1 where c1=306;
+delete from t1 where c1=305;
+delete from t1 where c1=304;
+delete from t1 where c1=303;
+delete from t1 where c1=302;
+delete from t1 where c1=301;
+delete from t1 where c1=300;
+delete from t1 where c1=299;
+delete from t1 where c1=298;
+delete from t1 where c1=297;
+delete from t1 where c1=296;
+delete from t1 where c1=295;
+delete from t1 where c1=294;
+delete from t1 where c1=293;
+delete from t1 where c1=292;
+delete from t1 where c1=291;
+delete from t1 where c1=290;
+delete from t1 where c1=289;
+delete from t1 where c1=288;
+delete from t1 where c1=287;
+delete from t1 where c1=286;
+delete from t1 where c1=285;
+delete from t1 where c1=284;
+delete from t1 where c1=283;
+delete from t1 where c1=282;
+delete from t1 where c1=281;
+delete from t1 where c1=280;
+delete from t1 where c1=279;
+delete from t1 where c1=278;
+delete from t1 where c1=277;
+delete from t1 where c1=276;
+delete from t1 where c1=275;
+delete from t1 where c1=274;
+delete from t1 where c1=273;
+delete from t1 where c1=272;
+delete from t1 where c1=271;
+delete from t1 where c1=270;
+delete from t1 where c1=269;
+delete from t1 where c1=268;
+delete from t1 where c1=267;
+delete from t1 where c1=266;
+delete from t1 where c1=265;
+delete from t1 where c1=264;
+delete from t1 where c1=263;
+delete from t1 where c1=262;
+delete from t1 where c1=261;
+delete from t1 where c1=260;
+delete from t1 where c1=259;
+delete from t1 where c1=258;
+delete from t1 where c1=257;
+delete from t1 where c1=256;
+delete from t1 where c1=255;
+delete from t1 where c1=254;
+delete from t1 where c1=253;
+delete from t1 where c1=252;
+delete from t1 where c1=251;
+delete from t1 where c1=250;
+delete from t1 where c1=249;
+delete from t1 where c1=248;
+delete from t1 where c1=247;
+delete from t1 where c1=246;
+delete from t1 where c1=245;
+delete from t1 where c1=244;
+delete from t1 where c1=243;
+delete from t1 where c1=242;
+delete from t1 where c1=241;
+delete from t1 where c1=240;
+delete from t1 where c1=239;
+delete from t1 where c1=238;
+delete from t1 where c1=237;
+delete from t1 where c1=236;
+delete from t1 where c1=235;
+delete from t1 where c1=234;
+delete from t1 where c1=233;
+delete from t1 where c1=232;
+delete from t1 where c1=231;
+delete from t1 where c1=230;
+delete from t1 where c1=229;
+delete from t1 where c1=228;
+delete from t1 where c1=227;
+delete from t1 where c1=226;
+delete from t1 where c1=225;
+delete from t1 where c1=224;
+delete from t1 where c1=223;
+delete from t1 where c1=222;
+delete from t1 where c1=221;
+delete from t1 where c1=220;
+delete from t1 where c1=219;
+delete from t1 where c1=218;
+delete from t1 where c1=217;
+delete from t1 where c1=216;
+delete from t1 where c1=215;
+delete from t1 where c1=214;
+delete from t1 where c1=213;
+delete from t1 where c1=212;
+delete from t1 where c1=211;
+delete from t1 where c1=210;
+delete from t1 where c1=209;
+delete from t1 where c1=208;
+delete from t1 where c1=207;
+delete from t1 where c1=206;
+delete from t1 where c1=205;
+delete from t1 where c1=204;
+delete from t1 where c1=203;
+delete from t1 where c1=202;
+delete from t1 where c1=201;
+delete from t1 where c1=200;
+delete from t1 where c1=199;
+delete from t1 where c1=198;
+delete from t1 where c1=197;
+delete from t1 where c1=196;
+delete from t1 where c1=195;
+delete from t1 where c1=194;
+delete from t1 where c1=193;
+delete from t1 where c1=192;
+delete from t1 where c1=191;
+delete from t1 where c1=190;
+delete from t1 where c1=189;
+delete from t1 where c1=188;
+delete from t1 where c1=187;
+delete from t1 where c1=186;
+delete from t1 where c1=185;
+delete from t1 where c1=184;
+delete from t1 where c1=183;
+delete from t1 where c1=182;
+delete from t1 where c1=181;
+delete from t1 where c1=180;
+delete from t1 where c1=179;
+delete from t1 where c1=178;
+delete from t1 where c1=177;
+delete from t1 where c1=176;
+delete from t1 where c1=175;
+delete from t1 where c1=174;
+delete from t1 where c1=173;
+delete from t1 where c1=172;
+delete from t1 where c1=171;
+delete from t1 where c1=170;
+delete from t1 where c1=169;
+delete from t1 where c1=168;
+delete from t1 where c1=167;
+delete from t1 where c1=166;
+delete from t1 where c1=165;
+delete from t1 where c1=164;
+delete from t1 where c1=163;
+delete from t1 where c1=162;
+delete from t1 where c1=161;
+delete from t1 where c1=160;
+delete from t1 where c1=159;
+delete from t1 where c1=158;
+delete from t1 where c1=157;
+delete from t1 where c1=156;
+delete from t1 where c1=155;
+delete from t1 where c1=154;
+delete from t1 where c1=153;
+delete from t1 where c1=152;
+delete from t1 where c1=151;
+delete from t1 where c1=150;
+delete from t1 where c1=149;
+delete from t1 where c1=148;
+delete from t1 where c1=147;
+delete from t1 where c1=146;
+delete from t1 where c1=145;
+delete from t1 where c1=144;
+delete from t1 where c1=143;
+delete from t1 where c1=142;
+delete from t1 where c1=141;
+delete from t1 where c1=140;
+delete from t1 where c1=139;
+delete from t1 where c1=138;
+delete from t1 where c1=137;
+delete from t1 where c1=136;
+delete from t1 where c1=135;
+delete from t1 where c1=134;
+delete from t1 where c1=133;
+delete from t1 where c1=132;
+delete from t1 where c1=131;
+delete from t1 where c1=130;
+delete from t1 where c1=129;
+delete from t1 where c1=128;
+delete from t1 where c1=127;
+delete from t1 where c1=126;
+delete from t1 where c1=125;
+delete from t1 where c1=124;
+delete from t1 where c1=123;
+delete from t1 where c1=122;
+delete from t1 where c1=121;
+delete from t1 where c1=120;
+delete from t1 where c1=119;
+delete from t1 where c1=118;
+delete from t1 where c1=117;
+delete from t1 where c1=116;
+delete from t1 where c1=115;
+delete from t1 where c1=114;
+delete from t1 where c1=113;
+delete from t1 where c1=112;
+delete from t1 where c1=111;
+delete from t1 where c1=110;
+delete from t1 where c1=109;
+delete from t1 where c1=108;
+delete from t1 where c1=107;
+delete from t1 where c1=106;
+delete from t1 where c1=105;
+delete from t1 where c1=104;
+delete from t1 where c1=103;
+delete from t1 where c1=102;
+delete from t1 where c1=101;
+delete from t1 where c1=100;
+delete from t1 where c1=99;
+delete from t1 where c1=98;
+delete from t1 where c1=97;
+delete from t1 where c1=96;
+delete from t1 where c1=95;
+delete from t1 where c1=94;
+delete from t1 where c1=93;
+delete from t1 where c1=92;
+delete from t1 where c1=91;
+delete from t1 where c1=90;
+delete from t1 where c1=89;
+delete from t1 where c1=88;
+delete from t1 where c1=87;
+delete from t1 where c1=86;
+delete from t1 where c1=85;
+delete from t1 where c1=84;
+delete from t1 where c1=83;
+delete from t1 where c1=82;
+delete from t1 where c1=81;
+delete from t1 where c1=80;
+delete from t1 where c1=79;
+delete from t1 where c1=78;
+delete from t1 where c1=77;
+delete from t1 where c1=76;
+delete from t1 where c1=75;
+delete from t1 where c1=74;
+delete from t1 where c1=73;
+delete from t1 where c1=72;
+delete from t1 where c1=71;
+delete from t1 where c1=70;
+delete from t1 where c1=69;
+delete from t1 where c1=68;
+delete from t1 where c1=67;
+delete from t1 where c1=66;
+delete from t1 where c1=65;
+delete from t1 where c1=64;
+delete from t1 where c1=63;
+delete from t1 where c1=62;
+delete from t1 where c1=61;
+delete from t1 where c1=60;
+delete from t1 where c1=59;
+delete from t1 where c1=58;
+delete from t1 where c1=57;
+delete from t1 where c1=56;
+delete from t1 where c1=55;
+delete from t1 where c1=54;
+delete from t1 where c1=53;
+delete from t1 where c1=52;
+delete from t1 where c1=51;
+delete from t1 where c1=50;
+delete from t1 where c1=49;
+delete from t1 where c1=48;
+delete from t1 where c1=47;
+delete from t1 where c1=46;
+delete from t1 where c1=45;
+delete from t1 where c1=44;
+delete from t1 where c1=43;
+delete from t1 where c1=42;
+delete from t1 where c1=41;
+delete from t1 where c1=40;
+delete from t1 where c1=39;
+delete from t1 where c1=38;
+delete from t1 where c1=37;
+delete from t1 where c1=36;
+delete from t1 where c1=35;
+delete from t1 where c1=34;
+delete from t1 where c1=33;
+delete from t1 where c1=32;
+delete from t1 where c1=31;
+delete from t1 where c1=30;
+delete from t1 where c1=29;
+delete from t1 where c1=28;
+delete from t1 where c1=27;
+delete from t1 where c1=26;
+delete from t1 where c1=25;
+delete from t1 where c1=24;
+delete from t1 where c1=23;
+delete from t1 where c1=22;
+delete from t1 where c1=21;
+delete from t1 where c1=20;
+delete from t1 where c1=19;
+delete from t1 where c1=18;
+delete from t1 where c1=17;
+delete from t1 where c1=16;
+delete from t1 where c1=15;
+delete from t1 where c1=14;
+delete from t1 where c1=13;
+delete from t1 where c1=12;
+delete from t1 where c1=11;
+delete from t1 where c1=10;
+delete from t1 where c1=9;
+delete from t1 where c1=8;
+delete from t1 where c1=7;
+delete from t1 where c1=6;
+delete from t1 where c1=5;
+delete from t1 where c1=4;
+delete from t1 where c1=3;
+delete from t1 where c1=2;
+delete from t1 where c1=1;
+select * from t1 where c1=1000;
+c1	c2
+1000	1
+select * from t1 where c1=999;
+c1	c2
+999	1
+select * from t1 where c1=998;
+c1	c2
+998	1
+select * from t1 where c1=997;
+c1	c2
+997	1
+select * from t1 where c1=996;
+c1	c2
+996	1
+select * from t1 where c1=995;
+c1	c2
+995	1
+select * from t1 where c1=994;
+c1	c2
+994	1
+select * from t1 where c1=993;
+c1	c2
+993	1
+select * from t1 where c1=992;
+c1	c2
+992	1
+select * from t1 where c1=991;
+c1	c2
+991	1
+select * from t1 where c1=990;
+c1	c2
+990	1
+select * from t1 where c1=989;
+c1	c2
+989	1
+select * from t1 where c1=988;
+c1	c2
+988	1
+select * from t1 where c1=987;
+c1	c2
+987	1
+select * from t1 where c1=986;
+c1	c2
+986	1
+select * from t1 where c1=985;
+c1	c2
+985	1
+select * from t1 where c1=984;
+c1	c2
+984	1
+select * from t1 where c1=983;
+c1	c2
+983	1
+select * from t1 where c1=982;
+c1	c2
+982	1
+select * from t1 where c1=981;
+c1	c2
+981	1
+select * from t1 where c1=980;
+c1	c2
+980	1
+select * from t1 where c1=979;
+c1	c2
+979	1
+select * from t1 where c1=978;
+c1	c2
+978	1
+select * from t1 where c1=977;
+c1	c2
+977	1
+select * from t1 where c1=976;
+c1	c2
+976	1
+select * from t1 where c1=975;
+c1	c2
+975	1
+select * from t1 where c1=974;
+c1	c2
+974	1
+select * from t1 where c1=973;
+c1	c2
+973	1
+select * from t1 where c1=972;
+c1	c2
+972	1
+select * from t1 where c1=971;
+c1	c2
+971	1
+select * from t1 where c1=970;
+c1	c2
+970	1
+select * from t1 where c1=969;
+c1	c2
+969	1
+select * from t1 where c1=968;
+c1	c2
+968	1
+select * from t1 where c1=967;
+c1	c2
+967	1
+select * from t1 where c1=966;
+c1	c2
+966	1
+select * from t1 where c1=965;
+c1	c2
+965	1
+select * from t1 where c1=964;
+c1	c2
+964	1
+select * from t1 where c1=963;
+c1	c2
+963	1
+select * from t1 where c1=962;
+c1	c2
+962	1
+select * from t1 where c1=961;
+c1	c2
+961	1
+select * from t1 where c1=960;
+c1	c2
+960	1
+select * from t1 where c1=959;
+c1	c2
+959	1
+select * from t1 where c1=958;
+c1	c2
+958	1
+select * from t1 where c1=957;
+c1	c2
+957	1
+select * from t1 where c1=956;
+c1	c2
+956	1
+select * from t1 where c1=955;
+c1	c2
+955	1
+select * from t1 where c1=954;
+c1	c2
+954	1
+select * from t1 where c1=953;
+c1	c2
+953	1
+select * from t1 where c1=952;
+c1	c2
+952	1
+select * from t1 where c1=951;
+c1	c2
+951	1
+select * from t1 where c1=950;
+c1	c2
+950	1
+select * from t1 where c1=949;
+c1	c2
+949	1
+select * from t1 where c1=948;
+c1	c2
+948	1
+select * from t1 where c1=947;
+c1	c2
+947	1
+select * from t1 where c1=946;
+c1	c2
+946	1
+select * from t1 where c1=945;
+c1	c2
+945	1
+select * from t1 where c1=944;
+c1	c2
+944	1
+select * from t1 where c1=943;
+c1	c2
+943	1
+select * from t1 where c1=942;
+c1	c2
+942	1
+select * from t1 where c1=941;
+c1	c2
+941	1
+select * from t1 where c1=940;
+c1	c2
+940	1
+select * from t1 where c1=939;
+c1	c2
+939	1
+select * from t1 where c1=938;
+c1	c2
+938	1
+select * from t1 where c1=937;
+c1	c2
+937	1
+select * from t1 where c1=936;
+c1	c2
+936	1
+select * from t1 where c1=935;
+c1	c2
+935	1
+select * from t1 where c1=934;
+c1	c2
+934	1
+select * from t1 where c1=933;
+c1	c2
+933	1
+select * from t1 where c1=932;
+c1	c2
+932	1
+select * from t1 where c1=931;
+c1	c2
+931	1
+select * from t1 where c1=930;
+c1	c2
+930	1
+select * from t1 where c1=929;
+c1	c2
+929	1
+select * from t1 where c1=928;
+c1	c2
+928	1
+select * from t1 where c1=927;
+c1	c2
+927	1
+select * from t1 where c1=926;
+c1	c2
+926	1
+select * from t1 where c1=925;
+c1	c2
+925	1
+select * from t1 where c1=924;
+c1	c2
+924	1
+select * from t1 where c1=923;
+c1	c2
+923	1
+select * from t1 where c1=922;
+c1	c2
+922	1
+select * from t1 where c1=921;
+c1	c2
+921	1
+select * from t1 where c1=920;
+c1	c2
+920	1
+select * from t1 where c1=919;
+c1	c2
+919	1
+select * from t1 where c1=918;
+c1	c2
+918	1
+select * from t1 where c1=917;
+c1	c2
+917	1
+select * from t1 where c1=916;
+c1	c2
+916	1
+select * from t1 where c1=915;
+c1	c2
+915	1
+select * from t1 where c1=914;
+c1	c2
+914	1
+select * from t1 where c1=913;
+c1	c2
+913	1
+select * from t1 where c1=912;
+c1	c2
+912	1
+select * from t1 where c1=911;
+c1	c2
+911	1
+select * from t1 where c1=910;
+c1	c2
+910	1
+select * from t1 where c1=909;
+c1	c2
+909	1
+select * from t1 where c1=908;
+c1	c2
+908	1
+select * from t1 where c1=907;
+c1	c2
+907	1
+select * from t1 where c1=906;
+c1	c2
+906	1
+select * from t1 where c1=905;
+c1	c2
+905	1
+select * from t1 where c1=904;
+c1	c2
+904	1
+select * from t1 where c1=903;
+c1	c2
+903	1
+select * from t1 where c1=902;
+c1	c2
+902	1
+select * from t1 where c1=901;
+c1	c2
+901	1
+select * from t1 where c1=900;
+c1	c2
+900	1
+select * from t1 where c1=899;
+c1	c2
+899	1
+select * from t1 where c1=898;
+c1	c2
+898	1
+select * from t1 where c1=897;
+c1	c2
+897	1
+select * from t1 where c1=896;
+c1	c2
+896	1
+select * from t1 where c1=895;
+c1	c2
+895	1
+select * from t1 where c1=894;
+c1	c2
+894	1
+select * from t1 where c1=893;
+c1	c2
+893	1
+select * from t1 where c1=892;
+c1	c2
+892	1
+select * from t1 where c1=891;
+c1	c2
+891	1
+select * from t1 where c1=890;
+c1	c2
+890	1
+select * from t1 where c1=889;
+c1	c2
+889	1
+select * from t1 where c1=888;
+c1	c2
+888	1
+select * from t1 where c1=887;
+c1	c2
+887	1
+select * from t1 where c1=886;
+c1	c2
+886	1
+select * from t1 where c1=885;
+c1	c2
+885	1
+select * from t1 where c1=884;
+c1	c2
+884	1
+select * from t1 where c1=883;
+c1	c2
+883	1
+select * from t1 where c1=882;
+c1	c2
+882	1
+select * from t1 where c1=881;
+c1	c2
+881	1
+select * from t1 where c1=880;
+c1	c2
+880	1
+select * from t1 where c1=879;
+c1	c2
+879	1
+select * from t1 where c1=878;
+c1	c2
+878	1
+select * from t1 where c1=877;
+c1	c2
+877	1
+select * from t1 where c1=876;
+c1	c2
+876	1
+select * from t1 where c1=875;
+c1	c2
+875	1
+select * from t1 where c1=874;
+c1	c2
+874	1
+select * from t1 where c1=873;
+c1	c2
+873	1
+select * from t1 where c1=872;
+c1	c2
+872	1
+select * from t1 where c1=871;
+c1	c2
+871	1
+select * from t1 where c1=870;
+c1	c2
+870	1
+select * from t1 where c1=869;
+c1	c2
+869	1
+select * from t1 where c1=868;
+c1	c2
+868	1
+select * from t1 where c1=867;
+c1	c2
+867	1
+select * from t1 where c1=866;
+c1	c2
+866	1
+select * from t1 where c1=865;
+c1	c2
+865	1
+select * from t1 where c1=864;
+c1	c2
+864	1
+select * from t1 where c1=863;
+c1	c2
+863	1
+select * from t1 where c1=862;
+c1	c2
+862	1
+select * from t1 where c1=861;
+c1	c2
+861	1
+select * from t1 where c1=860;
+c1	c2
+860	1
+select * from t1 where c1=859;
+c1	c2
+859	1
+select * from t1 where c1=858;
+c1	c2
+858	1
+select * from t1 where c1=857;
+c1	c2
+857	1
+select * from t1 where c1=856;
+c1	c2
+856	1
+select * from t1 where c1=855;
+c1	c2
+855	1
+select * from t1 where c1=854;
+c1	c2
+854	1
+select * from t1 where c1=853;
+c1	c2
+853	1
+select * from t1 where c1=852;
+c1	c2
+852	1
+select * from t1 where c1=851;
+c1	c2
+851	1
+select * from t1 where c1=850;
+c1	c2
+850	1
+select * from t1 where c1=849;
+c1	c2
+849	1
+select * from t1 where c1=848;
+c1	c2
+848	1
+select * from t1 where c1=847;
+c1	c2
+847	1
+select * from t1 where c1=846;
+c1	c2
+846	1
+select * from t1 where c1=845;
+c1	c2
+845	1
+select * from t1 where c1=844;
+c1	c2
+844	1
+select * from t1 where c1=843;
+c1	c2
+843	1
+select * from t1 where c1=842;
+c1	c2
+842	1
+select * from t1 where c1=841;
+c1	c2
+841	1
+select * from t1 where c1=840;
+c1	c2
+840	1
+select * from t1 where c1=839;
+c1	c2
+839	1
+select * from t1 where c1=838;
+c1	c2
+838	1
+select * from t1 where c1=837;
+c1	c2
+837	1
+select * from t1 where c1=836;
+c1	c2
+836	1
+select * from t1 where c1=835;
+c1	c2
+835	1
+select * from t1 where c1=834;
+c1	c2
+834	1
+select * from t1 where c1=833;
+c1	c2
+833	1
+select * from t1 where c1=832;
+c1	c2
+832	1
+select * from t1 where c1=831;
+c1	c2
+831	1
+select * from t1 where c1=830;
+c1	c2
+830	1
+select * from t1 where c1=829;
+c1	c2
+829	1
+select * from t1 where c1=828;
+c1	c2
+828	1
+select * from t1 where c1=827;
+c1	c2
+827	1
+select * from t1 where c1=826;
+c1	c2
+826	1
+select * from t1 where c1=825;
+c1	c2
+825	1
+select * from t1 where c1=824;
+c1	c2
+824	1
+select * from t1 where c1=823;
+c1	c2
+823	1
+select * from t1 where c1=822;
+c1	c2
+822	1
+select * from t1 where c1=821;
+c1	c2
+821	1
+select * from t1 where c1=820;
+c1	c2
+820	1
+select * from t1 where c1=819;
+c1	c2
+819	1
+select * from t1 where c1=818;
+c1	c2
+818	1
+select * from t1 where c1=817;
+c1	c2
+817	1
+select * from t1 where c1=816;
+c1	c2
+816	1
+select * from t1 where c1=815;
+c1	c2
+815	1
+select * from t1 where c1=814;
+c1	c2
+814	1
+select * from t1 where c1=813;
+c1	c2
+813	1
+select * from t1 where c1=812;
+c1	c2
+812	1
+select * from t1 where c1=811;
+c1	c2
+811	1
+select * from t1 where c1=810;
+c1	c2
+810	1
+select * from t1 where c1=809;
+c1	c2
+809	1
+select * from t1 where c1=808;
+c1	c2
+808	1
+select * from t1 where c1=807;
+c1	c2
+807	1
+select * from t1 where c1=806;
+c1	c2
+806	1
+select * from t1 where c1=805;
+c1	c2
+805	1
+select * from t1 where c1=804;
+c1	c2
+804	1
+select * from t1 where c1=803;
+c1	c2
+803	1
+select * from t1 where c1=802;
+c1	c2
+802	1
+select * from t1 where c1=801;
+c1	c2
+801	1
+select * from t1 where c1=800;
+c1	c2
+800	1
+select * from t1 where c1=799;
+c1	c2
+799	1
+select * from t1 where c1=798;
+c1	c2
+798	1
+select * from t1 where c1=797;
+c1	c2
+797	1
+select * from t1 where c1=796;
+c1	c2
+796	1
+select * from t1 where c1=795;
+c1	c2
+795	1
+select * from t1 where c1=794;
+c1	c2
+794	1
+select * from t1 where c1=793;
+c1	c2
+793	1
+select * from t1 where c1=792;
+c1	c2
+792	1
+select * from t1 where c1=791;
+c1	c2
+791	1
+select * from t1 where c1=790;
+c1	c2
+790	1
+select * from t1 where c1=789;
+c1	c2
+789	1
+select * from t1 where c1=788;
+c1	c2
+788	1
+select * from t1 where c1=787;
+c1	c2
+787	1
+select * from t1 where c1=786;
+c1	c2
+786	1
+select * from t1 where c1=785;
+c1	c2
+785	1
+select * from t1 where c1=784;
+c1	c2
+784	1
+select * from t1 where c1=783;
+c1	c2
+783	1
+select * from t1 where c1=782;
+c1	c2
+782	1
+select * from t1 where c1=781;
+c1	c2
+781	1
+select * from t1 where c1=780;
+c1	c2
+780	1
+select * from t1 where c1=779;
+c1	c2
+779	1
+select * from t1 where c1=778;
+c1	c2
+778	1
+select * from t1 where c1=777;
+c1	c2
+777	1
+select * from t1 where c1=776;
+c1	c2
+776	1
+select * from t1 where c1=775;
+c1	c2
+775	1
+select * from t1 where c1=774;
+c1	c2
+774	1
+select * from t1 where c1=773;
+c1	c2
+773	1
+select * from t1 where c1=772;
+c1	c2
+772	1
+select * from t1 where c1=771;
+c1	c2
+771	1
+select * from t1 where c1=770;
+c1	c2
+770	1
+select * from t1 where c1=769;
+c1	c2
+769	1
+select * from t1 where c1=768;
+c1	c2
+768	1
+select * from t1 where c1=767;
+c1	c2
+767	1
+select * from t1 where c1=766;
+c1	c2
+766	1
+select * from t1 where c1=765;
+c1	c2
+765	1
+select * from t1 where c1=764;
+c1	c2
+764	1
+select * from t1 where c1=763;
+c1	c2
+763	1
+select * from t1 where c1=762;
+c1	c2
+762	1
+select * from t1 where c1=761;
+c1	c2
+761	1
+select * from t1 where c1=760;
+c1	c2
+760	1
+select * from t1 where c1=759;
+c1	c2
+759	1
+select * from t1 where c1=758;
+c1	c2
+758	1
+select * from t1 where c1=757;
+c1	c2
+757	1
+select * from t1 where c1=756;
+c1	c2
+756	1
+select * from t1 where c1=755;
+c1	c2
+755	1
+select * from t1 where c1=754;
+c1	c2
+754	1
+select * from t1 where c1=753;
+c1	c2
+753	1
+select * from t1 where c1=752;
+c1	c2
+752	1
+select * from t1 where c1=751;
+c1	c2
+751	1
+select * from t1 where c1=750;
+c1	c2
+750	1
+select * from t1 where c1=749;
+c1	c2
+749	1
+select * from t1 where c1=748;
+c1	c2
+748	1
+select * from t1 where c1=747;
+c1	c2
+747	1
+select * from t1 where c1=746;
+c1	c2
+746	1
+select * from t1 where c1=745;
+c1	c2
+745	1
+select * from t1 where c1=744;
+c1	c2
+744	1
+select * from t1 where c1=743;
+c1	c2
+743	1
+select * from t1 where c1=742;
+c1	c2
+742	1
+select * from t1 where c1=741;
+c1	c2
+741	1
+select * from t1 where c1=740;
+c1	c2
+740	1
+select * from t1 where c1=739;
+c1	c2
+739	1
+select * from t1 where c1=738;
+c1	c2
+738	1
+select * from t1 where c1=737;
+c1	c2
+737	1
+select * from t1 where c1=736;
+c1	c2
+736	1
+select * from t1 where c1=735;
+c1	c2
+735	1
+select * from t1 where c1=734;
+c1	c2
+734	1
+select * from t1 where c1=733;
+c1	c2
+733	1
+select * from t1 where c1=732;
+c1	c2
+732	1
+select * from t1 where c1=731;
+c1	c2
+731	1
+select * from t1 where c1=730;
+c1	c2
+730	1
+select * from t1 where c1=729;
+c1	c2
+729	1
+select * from t1 where c1=728;
+c1	c2
+728	1
+select * from t1 where c1=727;
+c1	c2
+727	1
+select * from t1 where c1=726;
+c1	c2
+726	1
+select * from t1 where c1=725;
+c1	c2
+725	1
+select * from t1 where c1=724;
+c1	c2
+724	1
+select * from t1 where c1=723;
+c1	c2
+723	1
+select * from t1 where c1=722;
+c1	c2
+722	1
+select * from t1 where c1=721;
+c1	c2
+721	1
+select * from t1 where c1=720;
+c1	c2
+720	1
+select * from t1 where c1=719;
+c1	c2
+719	1
+select * from t1 where c1=718;
+c1	c2
+718	1
+select * from t1 where c1=717;
+c1	c2
+717	1
+select * from t1 where c1=716;
+c1	c2
+716	1
+select * from t1 where c1=715;
+c1	c2
+715	1
+select * from t1 where c1=714;
+c1	c2
+714	1
+select * from t1 where c1=713;
+c1	c2
+713	1
+select * from t1 where c1=712;
+c1	c2
+712	1
+select * from t1 where c1=711;
+c1	c2
+711	1
+select * from t1 where c1=710;
+c1	c2
+710	1
+select * from t1 where c1=709;
+c1	c2
+709	1
+select * from t1 where c1=708;
+c1	c2
+708	1
+select * from t1 where c1=707;
+c1	c2
+707	1
+select * from t1 where c1=706;
+c1	c2
+706	1
+select * from t1 where c1=705;
+c1	c2
+705	1
+select * from t1 where c1=704;
+c1	c2
+704	1
+select * from t1 where c1=703;
+c1	c2
+703	1
+select * from t1 where c1=702;
+c1	c2
+702	1
+select * from t1 where c1=701;
+c1	c2
+701	1
+select * from t1 where c1=700;
+c1	c2
+700	1
+select * from t1 where c1=699;
+c1	c2
+699	1
+select * from t1 where c1=698;
+c1	c2
+698	1
+select * from t1 where c1=697;
+c1	c2
+697	1
+select * from t1 where c1=696;
+c1	c2
+696	1
+select * from t1 where c1=695;
+c1	c2
+695	1
+select * from t1 where c1=694;
+c1	c2
+694	1
+select * from t1 where c1=693;
+c1	c2
+693	1
+select * from t1 where c1=692;
+c1	c2
+692	1
+select * from t1 where c1=691;
+c1	c2
+691	1
+select * from t1 where c1=690;
+c1	c2
+690	1
+select * from t1 where c1=689;
+c1	c2
+689	1
+select * from t1 where c1=688;
+c1	c2
+688	1
+select * from t1 where c1=687;
+c1	c2
+687	1
+select * from t1 where c1=686;
+c1	c2
+686	1
+select * from t1 where c1=685;
+c1	c2
+685	1
+select * from t1 where c1=684;
+c1	c2
+684	1
+select * from t1 where c1=683;
+c1	c2
+683	1
+select * from t1 where c1=682;
+c1	c2
+682	1
+select * from t1 where c1=681;
+c1	c2
+681	1
+select * from t1 where c1=680;
+c1	c2
+680	1
+select * from t1 where c1=679;
+c1	c2
+679	1
+select * from t1 where c1=678;
+c1	c2
+678	1
+select * from t1 where c1=677;
+c1	c2
+677	1
+select * from t1 where c1=676;
+c1	c2
+676	1
+select * from t1 where c1=675;
+c1	c2
+675	1
+select * from t1 where c1=674;
+c1	c2
+674	1
+select * from t1 where c1=673;
+c1	c2
+673	1
+select * from t1 where c1=672;
+c1	c2
+672	1
+select * from t1 where c1=671;
+c1	c2
+671	1
+select * from t1 where c1=670;
+c1	c2
+670	1
+select * from t1 where c1=669;
+c1	c2
+669	1
+select * from t1 where c1=668;
+c1	c2
+668	1
+select * from t1 where c1=667;
+c1	c2
+667	1
+select * from t1 where c1=666;
+c1	c2
+666	1
+select * from t1 where c1=665;
+c1	c2
+665	1
+select * from t1 where c1=664;
+c1	c2
+664	1
+select * from t1 where c1=663;
+c1	c2
+663	1
+select * from t1 where c1=662;
+c1	c2
+662	1
+select * from t1 where c1=661;
+c1	c2
+661	1
+select * from t1 where c1=660;
+c1	c2
+660	1
+select * from t1 where c1=659;
+c1	c2
+659	1
+select * from t1 where c1=658;
+c1	c2
+658	1
+select * from t1 where c1=657;
+c1	c2
+657	1
+select * from t1 where c1=656;
+c1	c2
+656	1
+select * from t1 where c1=655;
+c1	c2
+655	1
+select * from t1 where c1=654;
+c1	c2
+654	1
+select * from t1 where c1=653;
+c1	c2
+653	1
+select * from t1 where c1=652;
+c1	c2
+652	1
+select * from t1 where c1=651;
+c1	c2
+651	1
+select * from t1 where c1=650;
+c1	c2
+650	1
+select * from t1 where c1=649;
+c1	c2
+649	1
+select * from t1 where c1=648;
+c1	c2
+648	1
+select * from t1 where c1=647;
+c1	c2
+647	1
+select * from t1 where c1=646;
+c1	c2
+646	1
+select * from t1 where c1=645;
+c1	c2
+645	1
+select * from t1 where c1=644;
+c1	c2
+644	1
+select * from t1 where c1=643;
+c1	c2
+643	1
+select * from t1 where c1=642;
+c1	c2
+642	1
+select * from t1 where c1=641;
+c1	c2
+641	1
+select * from t1 where c1=640;
+c1	c2
+640	1
+select * from t1 where c1=639;
+c1	c2
+639	1
+select * from t1 where c1=638;
+c1	c2
+638	1
+select * from t1 where c1=637;
+c1	c2
+637	1
+select * from t1 where c1=636;
+c1	c2
+636	1
+select * from t1 where c1=635;
+c1	c2
+635	1
+select * from t1 where c1=634;
+c1	c2
+634	1
+select * from t1 where c1=633;
+c1	c2
+633	1
+select * from t1 where c1=632;
+c1	c2
+632	1
+select * from t1 where c1=631;
+c1	c2
+631	1
+select * from t1 where c1=630;
+c1	c2
+630	1
+select * from t1 where c1=629;
+c1	c2
+629	1
+select * from t1 where c1=628;
+c1	c2
+628	1
+select * from t1 where c1=627;
+c1	c2
+627	1
+select * from t1 where c1=626;
+c1	c2
+626	1
+select * from t1 where c1=625;
+c1	c2
+625	1
+select * from t1 where c1=624;
+c1	c2
+624	1
+select * from t1 where c1=623;
+c1	c2
+623	1
+select * from t1 where c1=622;
+c1	c2
+622	1
+select * from t1 where c1=621;
+c1	c2
+621	1
+select * from t1 where c1=620;
+c1	c2
+620	1
+select * from t1 where c1=619;
+c1	c2
+619	1
+select * from t1 where c1=618;
+c1	c2
+618	1
+select * from t1 where c1=617;
+c1	c2
+617	1
+select * from t1 where c1=616;
+c1	c2
+616	1
+select * from t1 where c1=615;
+c1	c2
+615	1
+select * from t1 where c1=614;
+c1	c2
+614	1
+select * from t1 where c1=613;
+c1	c2
+613	1
+select * from t1 where c1=612;
+c1	c2
+612	1
+select * from t1 where c1=611;
+c1	c2
+611	1
+select * from t1 where c1=610;
+c1	c2
+610	1
+select * from t1 where c1=609;
+c1	c2
+609	1
+select * from t1 where c1=608;
+c1	c2
+608	1
+select * from t1 where c1=607;
+c1	c2
+607	1
+select * from t1 where c1=606;
+c1	c2
+606	1
+select * from t1 where c1=605;
+c1	c2
+605	1
+select * from t1 where c1=604;
+c1	c2
+604	1
+select * from t1 where c1=603;
+c1	c2
+603	1
+select * from t1 where c1=602;
+c1	c2
+602	1
+select * from t1 where c1=601;
+c1	c2
+601	1
+select * from t1 where c1=600;
+c1	c2
+600	1
+select * from t1 where c1=599;
+c1	c2
+599	1
+select * from t1 where c1=598;
+c1	c2
+598	1
+select * from t1 where c1=597;
+c1	c2
+597	1
+select * from t1 where c1=596;
+c1	c2
+596	1
+select * from t1 where c1=595;
+c1	c2
+595	1
+select * from t1 where c1=594;
+c1	c2
+594	1
+select * from t1 where c1=593;
+c1	c2
+593	1
+select * from t1 where c1=592;
+c1	c2
+592	1
+select * from t1 where c1=591;
+c1	c2
+591	1
+select * from t1 where c1=590;
+c1	c2
+590	1
+select * from t1 where c1=589;
+c1	c2
+589	1
+select * from t1 where c1=588;
+c1	c2
+588	1
+select * from t1 where c1=587;
+c1	c2
+587	1
+select * from t1 where c1=586;
+c1	c2
+586	1
+select * from t1 where c1=585;
+c1	c2
+585	1
+select * from t1 where c1=584;
+c1	c2
+584	1
+select * from t1 where c1=583;
+c1	c2
+583	1
+select * from t1 where c1=582;
+c1	c2
+582	1
+select * from t1 where c1=581;
+c1	c2
+581	1
+select * from t1 where c1=580;
+c1	c2
+580	1
+select * from t1 where c1=579;
+c1	c2
+579	1
+select * from t1 where c1=578;
+c1	c2
+578	1
+select * from t1 where c1=577;
+c1	c2
+577	1
+select * from t1 where c1=576;
+c1	c2
+576	1
+select * from t1 where c1=575;
+c1	c2
+575	1
+select * from t1 where c1=574;
+c1	c2
+574	1
+select * from t1 where c1=573;
+c1	c2
+573	1
+select * from t1 where c1=572;
+c1	c2
+572	1
+select * from t1 where c1=571;
+c1	c2
+571	1
+select * from t1 where c1=570;
+c1	c2
+570	1
+select * from t1 where c1=569;
+c1	c2
+569	1
+select * from t1 where c1=568;
+c1	c2
+568	1
+select * from t1 where c1=567;
+c1	c2
+567	1
+select * from t1 where c1=566;
+c1	c2
+566	1
+select * from t1 where c1=565;
+c1	c2
+565	1
+select * from t1 where c1=564;
+c1	c2
+564	1
+select * from t1 where c1=563;
+c1	c2
+563	1
+select * from t1 where c1=562;
+c1	c2
+562	1
+select * from t1 where c1=561;
+c1	c2
+561	1
+select * from t1 where c1=560;
+c1	c2
+560	1
+select * from t1 where c1=559;
+c1	c2
+559	1
+select * from t1 where c1=558;
+c1	c2
+558	1
+select * from t1 where c1=557;
+c1	c2
+557	1
+select * from t1 where c1=556;
+c1	c2
+556	1
+select * from t1 where c1=555;
+c1	c2
+555	1
+select * from t1 where c1=554;
+c1	c2
+554	1
+select * from t1 where c1=553;
+c1	c2
+553	1
+select * from t1 where c1=552;
+c1	c2
+552	1
+select * from t1 where c1=551;
+c1	c2
+551	1
+select * from t1 where c1=550;
+c1	c2
+550	1
+select * from t1 where c1=549;
+c1	c2
+549	1
+select * from t1 where c1=548;
+c1	c2
+548	1
+select * from t1 where c1=547;
+c1	c2
+547	1
+select * from t1 where c1=546;
+c1	c2
+546	1
+select * from t1 where c1=545;
+c1	c2
+545	1
+select * from t1 where c1=544;
+c1	c2
+544	1
+select * from t1 where c1=543;
+c1	c2
+543	1
+select * from t1 where c1=542;
+c1	c2
+542	1
+select * from t1 where c1=541;
+c1	c2
+541	1
+select * from t1 where c1=540;
+c1	c2
+540	1
+select * from t1 where c1=539;
+c1	c2
+539	1
+select * from t1 where c1=538;
+c1	c2
+538	1
+select * from t1 where c1=537;
+c1	c2
+537	1
+select * from t1 where c1=536;
+c1	c2
+536	1
+select * from t1 where c1=535;
+c1	c2
+535	1
+select * from t1 where c1=534;
+c1	c2
+534	1
+select * from t1 where c1=533;
+c1	c2
+533	1
+select * from t1 where c1=532;
+c1	c2
+532	1
+select * from t1 where c1=531;
+c1	c2
+531	1
+select * from t1 where c1=530;
+c1	c2
+530	1
+select * from t1 where c1=529;
+c1	c2
+529	1
+select * from t1 where c1=528;
+c1	c2
+528	1
+select * from t1 where c1=527;
+c1	c2
+527	1
+select * from t1 where c1=526;
+c1	c2
+526	1
+select * from t1 where c1=525;
+c1	c2
+525	1
+select * from t1 where c1=524;
+c1	c2
+524	1
+select * from t1 where c1=523;
+c1	c2
+523	1
+select * from t1 where c1=522;
+c1	c2
+522	1
+select * from t1 where c1=521;
+c1	c2
+521	1
+select * from t1 where c1=520;
+c1	c2
+520	1
+select * from t1 where c1=519;
+c1	c2
+519	1
+select * from t1 where c1=518;
+c1	c2
+518	1
+select * from t1 where c1=517;
+c1	c2
+517	1
+select * from t1 where c1=516;
+c1	c2
+516	1
+select * from t1 where c1=515;
+c1	c2
+515	1
+select * from t1 where c1=514;
+c1	c2
+514	1
+select * from t1 where c1=513;
+c1	c2
+513	1
+select * from t1 where c1=512;
+c1	c2
+512	1
+select * from t1 where c1=511;
+c1	c2
+511	1
+select * from t1 where c1=510;
+c1	c2
+510	1
+select * from t1 where c1=509;
+c1	c2
+509	1
+select * from t1 where c1=508;
+c1	c2
+508	1
+select * from t1 where c1=507;
+c1	c2
+507	1
+select * from t1 where c1=506;
+c1	c2
+506	1
+select * from t1 where c1=505;
+c1	c2
+505	1
+select * from t1 where c1=504;
+c1	c2
+504	1
+select * from t1 where c1=503;
+c1	c2
+503	1
+select * from t1 where c1=502;
+c1	c2
+502	1
+select * from t1 where c1=501;
+c1	c2
+501	1
+select * from t1 where c1=500;
+c1	c2
+select * from t1 where c1=499;
+c1	c2
+select * from t1 where c1=498;
+c1	c2
+select * from t1 where c1=497;
+c1	c2
+select * from t1 where c1=496;
+c1	c2
+select * from t1 where c1=495;
+c1	c2
+select * from t1 where c1=494;
+c1	c2
+select * from t1 where c1=493;
+c1	c2
+select * from t1 where c1=492;
+c1	c2
+select * from t1 where c1=491;
+c1	c2
+select * from t1 where c1=490;
+c1	c2
+select * from t1 where c1=489;
+c1	c2
+select * from t1 where c1=488;
+c1	c2
+select * from t1 where c1=487;
+c1	c2
+select * from t1 where c1=486;
+c1	c2
+select * from t1 where c1=485;
+c1	c2
+select * from t1 where c1=484;
+c1	c2
+select * from t1 where c1=483;
+c1	c2
+select * from t1 where c1=482;
+c1	c2
+select * from t1 where c1=481;
+c1	c2
+select * from t1 where c1=480;
+c1	c2
+select * from t1 where c1=479;
+c1	c2
+select * from t1 where c1=478;
+c1	c2
+select * from t1 where c1=477;
+c1	c2
+select * from t1 where c1=476;
+c1	c2
+select * from t1 where c1=475;
+c1	c2
+select * from t1 where c1=474;
+c1	c2
+select * from t1 where c1=473;
+c1	c2
+select * from t1 where c1=472;
+c1	c2
+select * from t1 where c1=471;
+c1	c2
+select * from t1 where c1=470;
+c1	c2
+select * from t1 where c1=469;
+c1	c2
+select * from t1 where c1=468;
+c1	c2
+select * from t1 where c1=467;
+c1	c2
+select * from t1 where c1=466;
+c1	c2
+select * from t1 where c1=465;
+c1	c2
+select * from t1 where c1=464;
+c1	c2
+select * from t1 where c1=463;
+c1	c2
+select * from t1 where c1=462;
+c1	c2
+select * from t1 where c1=461;
+c1	c2
+select * from t1 where c1=460;
+c1	c2
+select * from t1 where c1=459;
+c1	c2
+select * from t1 where c1=458;
+c1	c2
+select * from t1 where c1=457;
+c1	c2
+select * from t1 where c1=456;
+c1	c2
+select * from t1 where c1=455;
+c1	c2
+select * from t1 where c1=454;
+c1	c2
+select * from t1 where c1=453;
+c1	c2
+select * from t1 where c1=452;
+c1	c2
+select * from t1 where c1=451;
+c1	c2
+select * from t1 where c1=450;
+c1	c2
+select * from t1 where c1=449;
+c1	c2
+select * from t1 where c1=448;
+c1	c2
+select * from t1 where c1=447;
+c1	c2
+select * from t1 where c1=446;
+c1	c2
+select * from t1 where c1=445;
+c1	c2
+select * from t1 where c1=444;
+c1	c2
+select * from t1 where c1=443;
+c1	c2
+select * from t1 where c1=442;
+c1	c2
+select * from t1 where c1=441;
+c1	c2
+select * from t1 where c1=440;
+c1	c2
+select * from t1 where c1=439;
+c1	c2
+select * from t1 where c1=438;
+c1	c2
+select * from t1 where c1=437;
+c1	c2
+select * from t1 where c1=436;
+c1	c2
+select * from t1 where c1=435;
+c1	c2
+select * from t1 where c1=434;
+c1	c2
+select * from t1 where c1=433;
+c1	c2
+select * from t1 where c1=432;
+c1	c2
+select * from t1 where c1=431;
+c1	c2
+select * from t1 where c1=430;
+c1	c2
+select * from t1 where c1=429;
+c1	c2
+select * from t1 where c1=428;
+c1	c2
+select * from t1 where c1=427;
+c1	c2
+select * from t1 where c1=426;
+c1	c2
+select * from t1 where c1=425;
+c1	c2
+select * from t1 where c1=424;
+c1	c2
+select * from t1 where c1=423;
+c1	c2
+select * from t1 where c1=422;
+c1	c2
+select * from t1 where c1=421;
+c1	c2
+select * from t1 where c1=420;
+c1	c2
+select * from t1 where c1=419;
+c1	c2
+select * from t1 where c1=418;
+c1	c2
+select * from t1 where c1=417;
+c1	c2
+select * from t1 where c1=416;
+c1	c2
+select * from t1 where c1=415;
+c1	c2
+select * from t1 where c1=414;
+c1	c2
+select * from t1 where c1=413;
+c1	c2
+select * from t1 where c1=412;
+c1	c2
+select * from t1 where c1=411;
+c1	c2
+select * from t1 where c1=410;
+c1	c2
+select * from t1 where c1=409;
+c1	c2
+select * from t1 where c1=408;
+c1	c2
+select * from t1 where c1=407;
+c1	c2
+select * from t1 where c1=406;
+c1	c2
+select * from t1 where c1=405;
+c1	c2
+select * from t1 where c1=404;
+c1	c2
+select * from t1 where c1=403;
+c1	c2
+select * from t1 where c1=402;
+c1	c2
+select * from t1 where c1=401;
+c1	c2
+select * from t1 where c1=400;
+c1	c2
+select * from t1 where c1=399;
+c1	c2
+select * from t1 where c1=398;
+c1	c2
+select * from t1 where c1=397;
+c1	c2
+select * from t1 where c1=396;
+c1	c2
+select * from t1 where c1=395;
+c1	c2
+select * from t1 where c1=394;
+c1	c2
+select * from t1 where c1=393;
+c1	c2
+select * from t1 where c1=392;
+c1	c2
+select * from t1 where c1=391;
+c1	c2
+select * from t1 where c1=390;
+c1	c2
+select * from t1 where c1=389;
+c1	c2
+select * from t1 where c1=388;
+c1	c2
+select * from t1 where c1=387;
+c1	c2
+select * from t1 where c1=386;
+c1	c2
+select * from t1 where c1=385;
+c1	c2
+select * from t1 where c1=384;
+c1	c2
+select * from t1 where c1=383;
+c1	c2
+select * from t1 where c1=382;
+c1	c2
+select * from t1 where c1=381;
+c1	c2
+select * from t1 where c1=380;
+c1	c2
+select * from t1 where c1=379;
+c1	c2
+select * from t1 where c1=378;
+c1	c2
+select * from t1 where c1=377;
+c1	c2
+select * from t1 where c1=376;
+c1	c2
+select * from t1 where c1=375;
+c1	c2
+select * from t1 where c1=374;
+c1	c2
+select * from t1 where c1=373;
+c1	c2
+select * from t1 where c1=372;
+c1	c2
+select * from t1 where c1=371;
+c1	c2
+select * from t1 where c1=370;
+c1	c2
+select * from t1 where c1=369;
+c1	c2
+select * from t1 where c1=368;
+c1	c2
+select * from t1 where c1=367;
+c1	c2
+select * from t1 where c1=366;
+c1	c2
+select * from t1 where c1=365;
+c1	c2
+select * from t1 where c1=364;
+c1	c2
+select * from t1 where c1=363;
+c1	c2
+select * from t1 where c1=362;
+c1	c2
+select * from t1 where c1=361;
+c1	c2
+select * from t1 where c1=360;
+c1	c2
+select * from t1 where c1=359;
+c1	c2
+select * from t1 where c1=358;
+c1	c2
+select * from t1 where c1=357;
+c1	c2
+select * from t1 where c1=356;
+c1	c2
+select * from t1 where c1=355;
+c1	c2
+select * from t1 where c1=354;
+c1	c2
+select * from t1 where c1=353;
+c1	c2
+select * from t1 where c1=352;
+c1	c2
+select * from t1 where c1=351;
+c1	c2
+select * from t1 where c1=350;
+c1	c2
+select * from t1 where c1=349;
+c1	c2
+select * from t1 where c1=348;
+c1	c2
+select * from t1 where c1=347;
+c1	c2
+select * from t1 where c1=346;
+c1	c2
+select * from t1 where c1=345;
+c1	c2
+select * from t1 where c1=344;
+c1	c2
+select * from t1 where c1=343;
+c1	c2
+select * from t1 where c1=342;
+c1	c2
+select * from t1 where c1=341;
+c1	c2
+select * from t1 where c1=340;
+c1	c2
+select * from t1 where c1=339;
+c1	c2
+select * from t1 where c1=338;
+c1	c2
+select * from t1 where c1=337;
+c1	c2
+select * from t1 where c1=336;
+c1	c2
+select * from t1 where c1=335;
+c1	c2
+select * from t1 where c1=334;
+c1	c2
+select * from t1 where c1=333;
+c1	c2
+select * from t1 where c1=332;
+c1	c2
+select * from t1 where c1=331;
+c1	c2
+select * from t1 where c1=330;
+c1	c2
+select * from t1 where c1=329;
+c1	c2
+select * from t1 where c1=328;
+c1	c2
+select * from t1 where c1=327;
+c1	c2
+select * from t1 where c1=326;
+c1	c2
+select * from t1 where c1=325;
+c1	c2
+select * from t1 where c1=324;
+c1	c2
+select * from t1 where c1=323;
+c1	c2
+select * from t1 where c1=322;
+c1	c2
+select * from t1 where c1=321;
+c1	c2
+select * from t1 where c1=320;
+c1	c2
+select * from t1 where c1=319;
+c1	c2
+select * from t1 where c1=318;
+c1	c2
+select * from t1 where c1=317;
+c1	c2
+select * from t1 where c1=316;
+c1	c2
+select * from t1 where c1=315;
+c1	c2
+select * from t1 where c1=314;
+c1	c2
+select * from t1 where c1=313;
+c1	c2
+select * from t1 where c1=312;
+c1	c2
+select * from t1 where c1=311;
+c1	c2
+select * from t1 where c1=310;
+c1	c2
+select * from t1 where c1=309;
+c1	c2
+select * from t1 where c1=308;
+c1	c2
+select * from t1 where c1=307;
+c1	c2
+select * from t1 where c1=306;
+c1	c2
+select * from t1 where c1=305;
+c1	c2
+select * from t1 where c1=304;
+c1	c2
+select * from t1 where c1=303;
+c1	c2
+select * from t1 where c1=302;
+c1	c2
+select * from t1 where c1=301;
+c1	c2
+select * from t1 where c1=300;
+c1	c2
+select * from t1 where c1=299;
+c1	c2
+select * from t1 where c1=298;
+c1	c2
+select * from t1 where c1=297;
+c1	c2
+select * from t1 where c1=296;
+c1	c2
+select * from t1 where c1=295;
+c1	c2
+select * from t1 where c1=294;
+c1	c2
+select * from t1 where c1=293;
+c1	c2
+select * from t1 where c1=292;
+c1	c2
+select * from t1 where c1=291;
+c1	c2
+select * from t1 where c1=290;
+c1	c2
+select * from t1 where c1=289;
+c1	c2
+select * from t1 where c1=288;
+c1	c2
+select * from t1 where c1=287;
+c1	c2
+select * from t1 where c1=286;
+c1	c2
+select * from t1 where c1=285;
+c1	c2
+select * from t1 where c1=284;
+c1	c2
+select * from t1 where c1=283;
+c1	c2
+select * from t1 where c1=282;
+c1	c2
+select * from t1 where c1=281;
+c1	c2
+select * from t1 where c1=280;
+c1	c2
+select * from t1 where c1=279;
+c1	c2
+select * from t1 where c1=278;
+c1	c2
+select * from t1 where c1=277;
+c1	c2
+select * from t1 where c1=276;
+c1	c2
+select * from t1 where c1=275;
+c1	c2
+select * from t1 where c1=274;
+c1	c2
+select * from t1 where c1=273;
+c1	c2
+select * from t1 where c1=272;
+c1	c2
+select * from t1 where c1=271;
+c1	c2
+select * from t1 where c1=270;
+c1	c2
+select * from t1 where c1=269;
+c1	c2
+select * from t1 where c1=268;
+c1	c2
+select * from t1 where c1=267;
+c1	c2
+select * from t1 where c1=266;
+c1	c2
+select * from t1 where c1=265;
+c1	c2
+select * from t1 where c1=264;
+c1	c2
+select * from t1 where c1=263;
+c1	c2
+select * from t1 where c1=262;
+c1	c2
+select * from t1 where c1=261;
+c1	c2
+select * from t1 where c1=260;
+c1	c2
+select * from t1 where c1=259;
+c1	c2
+select * from t1 where c1=258;
+c1	c2
+select * from t1 where c1=257;
+c1	c2
+select * from t1 where c1=256;
+c1	c2
+select * from t1 where c1=255;
+c1	c2
+select * from t1 where c1=254;
+c1	c2
+select * from t1 where c1=253;
+c1	c2
+select * from t1 where c1=252;
+c1	c2
+select * from t1 where c1=251;
+c1	c2
+select * from t1 where c1=250;
+c1	c2
+select * from t1 where c1=249;
+c1	c2
+select * from t1 where c1=248;
+c1	c2
+select * from t1 where c1=247;
+c1	c2
+select * from t1 where c1=246;
+c1	c2
+select * from t1 where c1=245;
+c1	c2
+select * from t1 where c1=244;
+c1	c2
+select * from t1 where c1=243;
+c1	c2
+select * from t1 where c1=242;
+c1	c2
+select * from t1 where c1=241;
+c1	c2
+select * from t1 where c1=240;
+c1	c2
+select * from t1 where c1=239;
+c1	c2
+select * from t1 where c1=238;
+c1	c2
+select * from t1 where c1=237;
+c1	c2
+select * from t1 where c1=236;
+c1	c2
+select * from t1 where c1=235;
+c1	c2
+select * from t1 where c1=234;
+c1	c2
+select * from t1 where c1=233;
+c1	c2
+select * from t1 where c1=232;
+c1	c2
+select * from t1 where c1=231;
+c1	c2
+select * from t1 where c1=230;
+c1	c2
+select * from t1 where c1=229;
+c1	c2
+select * from t1 where c1=228;
+c1	c2
+select * from t1 where c1=227;
+c1	c2
+select * from t1 where c1=226;
+c1	c2
+select * from t1 where c1=225;
+c1	c2
+select * from t1 where c1=224;
+c1	c2
+select * from t1 where c1=223;
+c1	c2
+select * from t1 where c1=222;
+c1	c2
+select * from t1 where c1=221;
+c1	c2
+select * from t1 where c1=220;
+c1	c2
+select * from t1 where c1=219;
+c1	c2
+select * from t1 where c1=218;
+c1	c2
+select * from t1 where c1=217;
+c1	c2
+select * from t1 where c1=216;
+c1	c2
+select * from t1 where c1=215;
+c1	c2
+select * from t1 where c1=214;
+c1	c2
+select * from t1 where c1=213;
+c1	c2
+select * from t1 where c1=212;
+c1	c2
+select * from t1 where c1=211;
+c1	c2
+select * from t1 where c1=210;
+c1	c2
+select * from t1 where c1=209;
+c1	c2
+select * from t1 where c1=208;
+c1	c2
+select * from t1 where c1=207;
+c1	c2
+select * from t1 where c1=206;
+c1	c2
+select * from t1 where c1=205;
+c1	c2
+select * from t1 where c1=204;
+c1	c2
+select * from t1 where c1=203;
+c1	c2
+select * from t1 where c1=202;
+c1	c2
+select * from t1 where c1=201;
+c1	c2
+select * from t1 where c1=200;
+c1	c2
+select * from t1 where c1=199;
+c1	c2
+select * from t1 where c1=198;
+c1	c2
+select * from t1 where c1=197;
+c1	c2
+select * from t1 where c1=196;
+c1	c2
+select * from t1 where c1=195;
+c1	c2
+select * from t1 where c1=194;
+c1	c2
+select * from t1 where c1=193;
+c1	c2
+select * from t1 where c1=192;
+c1	c2
+select * from t1 where c1=191;
+c1	c2
+select * from t1 where c1=190;
+c1	c2
+select * from t1 where c1=189;
+c1	c2
+select * from t1 where c1=188;
+c1	c2
+select * from t1 where c1=187;
+c1	c2
+select * from t1 where c1=186;
+c1	c2
+select * from t1 where c1=185;
+c1	c2
+select * from t1 where c1=184;
+c1	c2
+select * from t1 where c1=183;
+c1	c2
+select * from t1 where c1=182;
+c1	c2
+select * from t1 where c1=181;
+c1	c2
+select * from t1 where c1=180;
+c1	c2
+select * from t1 where c1=179;
+c1	c2
+select * from t1 where c1=178;
+c1	c2
+select * from t1 where c1=177;
+c1	c2
+select * from t1 where c1=176;
+c1	c2
+select * from t1 where c1=175;
+c1	c2
+select * from t1 where c1=174;
+c1	c2
+select * from t1 where c1=173;
+c1	c2
+select * from t1 where c1=172;
+c1	c2
+select * from t1 where c1=171;
+c1	c2
+select * from t1 where c1=170;
+c1	c2
+select * from t1 where c1=169;
+c1	c2
+select * from t1 where c1=168;
+c1	c2
+select * from t1 where c1=167;
+c1	c2
+select * from t1 where c1=166;
+c1	c2
+select * from t1 where c1=165;
+c1	c2
+select * from t1 where c1=164;
+c1	c2
+select * from t1 where c1=163;
+c1	c2
+select * from t1 where c1=162;
+c1	c2
+select * from t1 where c1=161;
+c1	c2
+select * from t1 where c1=160;
+c1	c2
+select * from t1 where c1=159;
+c1	c2
+select * from t1 where c1=158;
+c1	c2
+select * from t1 where c1=157;
+c1	c2
+select * from t1 where c1=156;
+c1	c2
+select * from t1 where c1=155;
+c1	c2
+select * from t1 where c1=154;
+c1	c2
+select * from t1 where c1=153;
+c1	c2
+select * from t1 where c1=152;
+c1	c2
+select * from t1 where c1=151;
+c1	c2
+select * from t1 where c1=150;
+c1	c2
+select * from t1 where c1=149;
+c1	c2
+select * from t1 where c1=148;
+c1	c2
+select * from t1 where c1=147;
+c1	c2
+select * from t1 where c1=146;
+c1	c2
+select * from t1 where c1=145;
+c1	c2
+select * from t1 where c1=144;
+c1	c2
+select * from t1 where c1=143;
+c1	c2
+select * from t1 where c1=142;
+c1	c2
+select * from t1 where c1=141;
+c1	c2
+select * from t1 where c1=140;
+c1	c2
+select * from t1 where c1=139;
+c1	c2
+select * from t1 where c1=138;
+c1	c2
+select * from t1 where c1=137;
+c1	c2
+select * from t1 where c1=136;
+c1	c2
+select * from t1 where c1=135;
+c1	c2
+select * from t1 where c1=134;
+c1	c2
+select * from t1 where c1=133;
+c1	c2
+select * from t1 where c1=132;
+c1	c2
+select * from t1 where c1=131;
+c1	c2
+select * from t1 where c1=130;
+c1	c2
+select * from t1 where c1=129;
+c1	c2
+select * from t1 where c1=128;
+c1	c2
+select * from t1 where c1=127;
+c1	c2
+select * from t1 where c1=126;
+c1	c2
+select * from t1 where c1=125;
+c1	c2
+select * from t1 where c1=124;
+c1	c2
+select * from t1 where c1=123;
+c1	c2
+select * from t1 where c1=122;
+c1	c2
+select * from t1 where c1=121;
+c1	c2
+select * from t1 where c1=120;
+c1	c2
+select * from t1 where c1=119;
+c1	c2
+select * from t1 where c1=118;
+c1	c2
+select * from t1 where c1=117;
+c1	c2
+select * from t1 where c1=116;
+c1	c2
+select * from t1 where c1=115;
+c1	c2
+select * from t1 where c1=114;
+c1	c2
+select * from t1 where c1=113;
+c1	c2
+select * from t1 where c1=112;
+c1	c2
+select * from t1 where c1=111;
+c1	c2
+select * from t1 where c1=110;
+c1	c2
+select * from t1 where c1=109;
+c1	c2
+select * from t1 where c1=108;
+c1	c2
+select * from t1 where c1=107;
+c1	c2
+select * from t1 where c1=106;
+c1	c2
+select * from t1 where c1=105;
+c1	c2
+select * from t1 where c1=104;
+c1	c2
+select * from t1 where c1=103;
+c1	c2
+select * from t1 where c1=102;
+c1	c2
+select * from t1 where c1=101;
+c1	c2
+select * from t1 where c1=100;
+c1	c2
+select * from t1 where c1=99;
+c1	c2
+select * from t1 where c1=98;
+c1	c2
+select * from t1 where c1=97;
+c1	c2
+select * from t1 where c1=96;
+c1	c2
+select * from t1 where c1=95;
+c1	c2
+select * from t1 where c1=94;
+c1	c2
+select * from t1 where c1=93;
+c1	c2
+select * from t1 where c1=92;
+c1	c2
+select * from t1 where c1=91;
+c1	c2
+select * from t1 where c1=90;
+c1	c2
+select * from t1 where c1=89;
+c1	c2
+select * from t1 where c1=88;
+c1	c2
+select * from t1 where c1=87;
+c1	c2
+select * from t1 where c1=86;
+c1	c2
+select * from t1 where c1=85;
+c1	c2
+select * from t1 where c1=84;
+c1	c2
+select * from t1 where c1=83;
+c1	c2
+select * from t1 where c1=82;
+c1	c2
+select * from t1 where c1=81;
+c1	c2
+select * from t1 where c1=80;
+c1	c2
+select * from t1 where c1=79;
+c1	c2
+select * from t1 where c1=78;
+c1	c2
+select * from t1 where c1=77;
+c1	c2
+select * from t1 where c1=76;
+c1	c2
+select * from t1 where c1=75;
+c1	c2
+select * from t1 where c1=74;
+c1	c2
+select * from t1 where c1=73;
+c1	c2
+select * from t1 where c1=72;
+c1	c2
+select * from t1 where c1=71;
+c1	c2
+select * from t1 where c1=70;
+c1	c2
+select * from t1 where c1=69;
+c1	c2
+select * from t1 where c1=68;
+c1	c2
+select * from t1 where c1=67;
+c1	c2
+select * from t1 where c1=66;
+c1	c2
+select * from t1 where c1=65;
+c1	c2
+select * from t1 where c1=64;
+c1	c2
+select * from t1 where c1=63;
+c1	c2
+select * from t1 where c1=62;
+c1	c2
+select * from t1 where c1=61;
+c1	c2
+select * from t1 where c1=60;
+c1	c2
+select * from t1 where c1=59;
+c1	c2
+select * from t1 where c1=58;
+c1	c2
+select * from t1 where c1=57;
+c1	c2
+select * from t1 where c1=56;
+c1	c2
+select * from t1 where c1=55;
+c1	c2
+select * from t1 where c1=54;
+c1	c2
+select * from t1 where c1=53;
+c1	c2
+select * from t1 where c1=52;
+c1	c2
+select * from t1 where c1=51;
+c1	c2
+select * from t1 where c1=50;
+c1	c2
+select * from t1 where c1=49;
+c1	c2
+select * from t1 where c1=48;
+c1	c2
+select * from t1 where c1=47;
+c1	c2
+select * from t1 where c1=46;
+c1	c2
+select * from t1 where c1=45;
+c1	c2
+select * from t1 where c1=44;
+c1	c2
+select * from t1 where c1=43;
+c1	c2
+select * from t1 where c1=42;
+c1	c2
+select * from t1 where c1=41;
+c1	c2
+select * from t1 where c1=40;
+c1	c2
+select * from t1 where c1=39;
+c1	c2
+select * from t1 where c1=38;
+c1	c2
+select * from t1 where c1=37;
+c1	c2
+select * from t1 where c1=36;
+c1	c2
+select * from t1 where c1=35;
+c1	c2
+select * from t1 where c1=34;
+c1	c2
+select * from t1 where c1=33;
+c1	c2
+select * from t1 where c1=32;
+c1	c2
+select * from t1 where c1=31;
+c1	c2
+select * from t1 where c1=30;
+c1	c2
+select * from t1 where c1=29;
+c1	c2
+select * from t1 where c1=28;
+c1	c2
+select * from t1 where c1=27;
+c1	c2
+select * from t1 where c1=26;
+c1	c2
+select * from t1 where c1=25;
+c1	c2
+select * from t1 where c1=24;
+c1	c2
+select * from t1 where c1=23;
+c1	c2
+select * from t1 where c1=22;
+c1	c2
+select * from t1 where c1=21;
+c1	c2
+select * from t1 where c1=20;
+c1	c2
+select * from t1 where c1=19;
+c1	c2
+select * from t1 where c1=18;
+c1	c2
+select * from t1 where c1=17;
+c1	c2
+select * from t1 where c1=16;
+c1	c2
+select * from t1 where c1=15;
+c1	c2
+select * from t1 where c1=14;
+c1	c2
+select * from t1 where c1=13;
+c1	c2
+select * from t1 where c1=12;
+c1	c2
+select * from t1 where c1=11;
+c1	c2
+select * from t1 where c1=10;
+c1	c2
+select * from t1 where c1=9;
+c1	c2
+select * from t1 where c1=8;
+c1	c2
+select * from t1 where c1=7;
+c1	c2
+select * from t1 where c1=6;
+c1	c2
+select * from t1 where c1=5;
+c1	c2
+select * from t1 where c1=4;
+c1	c2
+select * from t1 where c1=3;
+c1	c2
+select * from t1 where c1=2;
+c1	c2
+select * from t1 where c1=1;
+c1	c2
+master cluster
+value-50>0
+0
+0
+0
+0
+slave cluster
+value-50>0
+1
+1
+1
+1
+master cluster replace count
+value>1
+0
+0
+0
+0
+slave cluster replace count
+value>0
+1
+1
+1
+1
+master cluster insert count
+value>0
+0
+0
+0
+0
+slave cluster insert count
+value>0
+1
+1
+1
+1
+master cluster update count
+value>0
+0
+0
+0
+0
+slave cluster update count
+value>0
+1
+1
+1
+1
+master cluster delete count
+value>0
+0
+0
+0
+0
+slave cluster delete count
+value>0
+1
+1
+1
+1
+master cluster select count
+value - 50 > 0
+0
+0
+0
+0
+slave cluster select count
+value - 50 > 0
+1
+1
+1
+1

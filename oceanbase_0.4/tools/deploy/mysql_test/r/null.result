@@ -1,0 +1,100 @@
+drop table if exists t1,t2,t3,t4;
+create table t1(pk int primary key,extra int);
+insert into t1(pk) values(1),(2);
+select * from t1;
+pk	extra
+1	NULL
+2	NULL
+insert into t1(pk,extra) values(3,NULL),(4,NULL);
+select * from t1;
+pk	extra
+1	NULL
+2	NULL
+3	NULL
+4	NULL
+insert into t1(pk,extra) values(NULL,NULL);
+select * from t1;
+pk	extra
+NULL	NULL
+1	NULL
+2	NULL
+3	NULL
+4	NULL
+select * from t1 where extra = NULL;
+pk	extra
+select * from t1 where extra != NULL;
+pk	extra
+select * from t1 where extra is NULL;
+pk	extra
+NULL	NULL
+1	NULL
+2	NULL
+3	NULL
+4	NULL
+select * from t1 where extra is not NULL;
+pk	extra
+select * from t1 where pk is NULL;
+pk	extra
+NULL	NULL
+select * from t1 where pk = NULL;
+pk	extra
+select * from t1 where pk != NULL;
+pk	extra
+select * from t1 where pk is not  NULL;
+pk	extra
+1	NULL
+2	NULL
+3	NULL
+4	NULL
+select * from t1 where pk in (NULL);
+pk	extra
+NULL	NULL
+select * from t1 where pk in (NULL,1);
+pk	extra
+NULL	NULL
+1	NULL
+select * from t1 where null > null;
+pk	extra
+select * from t1 where null < null;
+pk	extra
+select * from t1 where null = null;
+pk	extra
+select * from t1 where null > 1;
+pk	extra
+select * from t1 where null < 1;
+pk	extra
+select * from t1 where null is null;
+pk	extra
+NULL	NULL
+1	NULL
+2	NULL
+3	NULL
+4	NULL
+update t1 set extra=1 where pk = NULL;
+select * from t1;
+pk	extra
+NULL	1
+1	NULL
+2	NULL
+3	NULL
+4	NULL
+update t1 set extra=1 where pk != NULL;
+ERROR HY000: Primary key column 16 not specified in the WHERE clause
+update t1 set extra=1 where pk is NULL;
+ERROR HY000: OB-5047: No rowkey column specified
+update t1 set extra=1 where pk is not NULL;
+ERROR HY000: Primary key column 16 not specified in the WHERE clause
+delete from t1 where pk = NULL;
+select * from t1;
+pk	extra
+1	NULL
+2	NULL
+3	NULL
+4	NULL
+delete from t1 where pk is NULL;
+ERROR HY000: OB-5047: No rowkey column specified
+delete from t1 where pk is not NULL;
+ERROR HY000: Primary key column 16 not specified in the WHERE clause
+delete from t1 where pk != NULL;
+ERROR HY000: Primary key column 16 not specified in the WHERE clause
+drop table t1;

@@ -1,0 +1,487 @@
+ob1=OBI(cluster=1133)
+ob1.reboot
+ob1.source include/merge.inc
+ob1.prepare l
+ob1.major_freeze
+ob1.start_check
+ob1.cs0.cs_admin uninstall_disk  1
+ob1.cs0.cs_admin uninstall_disk  2
+ob1.cs0.cs_admin uninstall_disk  3
+ob1.cs0.cs_admin uninstall_disk  4
+ob1.cs0.cs_admin uninstall_disk  5
+ob1.cs0.cs_admin uninstall_disk  6
+ob1.cs0.cs_admin uninstall_disk  7
+ob1.cs0.cs_admin uninstall_disk  8
+ob1.cs1.cs_admin uninstall_disk  1
+ob1.cs1.cs_admin uninstall_disk  2
+ob1.cs1.cs_admin uninstall_disk  3
+ob1.cs1.cs_admin uninstall_disk  4
+ob1.cs1.cs_admin uninstall_disk  5
+ob1.cs1.cs_admin uninstall_disk  6
+ob1.cs1.cs_admin uninstall_disk  7
+ob1.cs1.cs_admin uninstall_disk  8
+ob1.cs0.clean_sstable 1
+ob1.cs0.clean_sstable 2
+ob1.cs0.clean_sstable 3
+ob1.cs0.clean_sstable 4
+ob1.cs0.clean_sstable 5
+ob1.cs0.clean_sstable 6
+ob1.cs0.clean_sstable 7
+ob1.cs0.clean_sstable 8
+ob1.cs1.clean_sstable 1
+ob1.cs1.clean_sstable 2
+ob1.cs1.clean_sstable 3
+ob1.cs1.clean_sstable 4
+ob1.cs1.clean_sstable 5
+ob1.cs1.clean_sstable 6
+ob1.cs1.clean_sstable 7
+ob1.cs1.clean_sstable 8
+ob1.cs0.cs_admin install_disk  1
+ob1.cs0.cs_admin install_disk  2
+ob1.cs0.cs_admin install_disk  3
+ob1.cs0.cs_admin install_disk  4
+ob1.cs0.cs_admin install_disk  5
+ob1.cs0.cs_admin install_disk  6
+ob1.cs0.cs_admin install_disk  7
+ob1.cs0.cs_admin install_disk  8
+ob1.cs1.cs_admin install_disk  1
+ob1.cs1.cs_admin install_disk  2
+ob1.cs1.cs_admin install_disk  3
+ob1.cs1.cs_admin install_disk  4
+ob1.cs1.cs_admin install_disk  5
+ob1.cs1.cs_admin install_disk  6
+ob1.cs1.cs_admin install_disk  7
+ob1.cs1.cs_admin install_disk  8
+ob1.cs0.cs_admin uninstall_disk  1
+ob1.cs0.cs_admin uninstall_disk  2
+ob1.cs0.cs_admin uninstall_disk  3
+ob1.cs0.cs_admin uninstall_disk  4
+ob1.cs0.cs_admin uninstall_disk  5
+ob1.cs0.cs_admin uninstall_disk  6
+ob1.cs0.cs_admin uninstall_disk  7
+ob1.cs0.cs_admin uninstall_disk  8
+ob1.cs1.cs_admin uninstall_disk  1
+ob1.cs1.cs_admin uninstall_disk  2
+ob1.cs1.cs_admin uninstall_disk  3
+ob1.cs1.cs_admin uninstall_disk  4
+ob1.cs1.cs_admin uninstall_disk  5
+ob1.cs1.cs_admin uninstall_disk  6
+ob1.cs1.cs_admin uninstall_disk  7
+ob1.cs1.cs_admin uninstall_disk  8
+ob1.cs0.clean_sstable 1
+ob1.cs0.clean_sstable 2
+ob1.cs0.clean_sstable 3
+ob1.cs0.clean_sstable 4
+ob1.cs0.clean_sstable 5
+ob1.cs0.clean_sstable 6
+ob1.cs0.clean_sstable 7
+ob1.cs0.clean_sstable 8
+ob1.cs1.clean_sstable 1
+ob1.cs1.clean_sstable 2
+ob1.cs1.clean_sstable 3
+ob1.cs1.clean_sstable 4
+ob1.cs1.clean_sstable 5
+ob1.cs1.clean_sstable 6
+ob1.cs1.clean_sstable 7
+ob1.cs1.clean_sstable 8
+ob1.cs0.cs_admin install_disk  1
+ob1.cs0.cs_admin install_disk  2
+ob1.cs0.cs_admin install_disk  3
+ob1.cs0.cs_admin install_disk  4
+ob1.cs0.cs_admin install_disk  5
+ob1.cs0.cs_admin install_disk  6
+ob1.cs0.cs_admin install_disk  7
+ob1.cs0.cs_admin install_disk  8
+ob1.cs1.cs_admin install_disk  1
+ob1.cs1.cs_admin install_disk  2
+ob1.cs1.cs_admin install_disk  3
+ob1.cs1.cs_admin install_disk  4
+ob1.cs1.cs_admin install_disk  5
+ob1.cs1.cs_admin install_disk  6
+ob1.cs1.cs_admin install_disk  7
+ob1.cs1.cs_admin install_disk  8
+ob1.cs0.cs_admin uninstall_disk  1
+ob1.cs0.cs_admin uninstall_disk  2
+ob1.cs0.cs_admin uninstall_disk  3
+ob1.cs0.cs_admin uninstall_disk  4
+ob1.cs0.cs_admin uninstall_disk  5
+ob1.cs0.cs_admin uninstall_disk  6
+ob1.cs0.cs_admin uninstall_disk  7
+ob1.cs0.cs_admin uninstall_disk  8
+ob1.cs1.cs_admin uninstall_disk  1
+ob1.cs1.cs_admin uninstall_disk  2
+ob1.cs1.cs_admin uninstall_disk  3
+ob1.cs1.cs_admin uninstall_disk  4
+ob1.cs1.cs_admin uninstall_disk  5
+ob1.cs1.cs_admin uninstall_disk  6
+ob1.cs1.cs_admin uninstall_disk  7
+ob1.cs1.cs_admin uninstall_disk  8
+ob1.cs0.clean_sstable 1
+ob1.cs0.clean_sstable 2
+ob1.cs0.clean_sstable 3
+ob1.cs0.clean_sstable 4
+ob1.cs0.clean_sstable 5
+ob1.cs0.clean_sstable 6
+ob1.cs0.clean_sstable 7
+ob1.cs0.clean_sstable 8
+ob1.cs1.clean_sstable 1
+ob1.cs1.clean_sstable 2
+ob1.cs1.clean_sstable 3
+ob1.cs1.clean_sstable 4
+ob1.cs1.clean_sstable 5
+ob1.cs1.clean_sstable 6
+ob1.cs1.clean_sstable 7
+ob1.cs1.clean_sstable 8
+ob1.cs0.cs_admin install_disk  1
+ob1.cs0.cs_admin install_disk  2
+ob1.cs0.cs_admin install_disk  3
+ob1.cs0.cs_admin install_disk  4
+ob1.cs0.cs_admin install_disk  5
+ob1.cs0.cs_admin install_disk  6
+ob1.cs0.cs_admin install_disk  7
+ob1.cs0.cs_admin install_disk  8
+ob1.cs1.cs_admin install_disk  1
+ob1.cs1.cs_admin install_disk  2
+ob1.cs1.cs_admin install_disk  3
+ob1.cs1.cs_admin install_disk  4
+ob1.cs1.cs_admin install_disk  5
+ob1.cs1.cs_admin install_disk  6
+ob1.cs1.cs_admin install_disk  7
+ob1.cs1.cs_admin install_disk  8
+ob1.cs0.cs_admin uninstall_disk  1
+ob1.cs0.cs_admin uninstall_disk  2
+ob1.cs0.cs_admin uninstall_disk  3
+ob1.cs0.cs_admin uninstall_disk  4
+ob1.cs0.cs_admin uninstall_disk  5
+ob1.cs0.cs_admin uninstall_disk  6
+ob1.cs0.cs_admin uninstall_disk  7
+ob1.cs0.cs_admin uninstall_disk  8
+ob1.cs1.cs_admin uninstall_disk  1
+ob1.cs1.cs_admin uninstall_disk  2
+ob1.cs1.cs_admin uninstall_disk  3
+ob1.cs1.cs_admin uninstall_disk  4
+ob1.cs1.cs_admin uninstall_disk  5
+ob1.cs1.cs_admin uninstall_disk  6
+ob1.cs1.cs_admin uninstall_disk  7
+ob1.cs1.cs_admin uninstall_disk  8
+ob1.cs0.clean_sstable 1
+ob1.cs0.clean_sstable 2
+ob1.cs0.clean_sstable 3
+ob1.cs0.clean_sstable 4
+ob1.cs0.clean_sstable 5
+ob1.cs0.clean_sstable 6
+ob1.cs0.clean_sstable 7
+ob1.cs0.clean_sstable 8
+ob1.cs1.clean_sstable 1
+ob1.cs1.clean_sstable 2
+ob1.cs1.clean_sstable 3
+ob1.cs1.clean_sstable 4
+ob1.cs1.clean_sstable 5
+ob1.cs1.clean_sstable 6
+ob1.cs1.clean_sstable 7
+ob1.cs1.clean_sstable 8
+ob1.cs0.cs_admin install_disk  1
+ob1.cs0.cs_admin install_disk  2
+ob1.cs0.cs_admin install_disk  3
+ob1.cs0.cs_admin install_disk  4
+ob1.cs0.cs_admin install_disk  5
+ob1.cs0.cs_admin install_disk  6
+ob1.cs0.cs_admin install_disk  7
+ob1.cs0.cs_admin install_disk  8
+ob1.cs1.cs_admin install_disk  1
+ob1.cs1.cs_admin install_disk  2
+ob1.cs1.cs_admin install_disk  3
+ob1.cs1.cs_admin install_disk  4
+ob1.cs1.cs_admin install_disk  5
+ob1.cs1.cs_admin install_disk  6
+ob1.cs1.cs_admin install_disk  7
+ob1.cs1.cs_admin install_disk  8
+ob1.cs0.cs_admin uninstall_disk  1
+ob1.cs0.cs_admin uninstall_disk  2
+ob1.cs0.cs_admin uninstall_disk  3
+ob1.cs0.cs_admin uninstall_disk  4
+ob1.cs0.cs_admin uninstall_disk  5
+ob1.cs0.cs_admin uninstall_disk  6
+ob1.cs0.cs_admin uninstall_disk  7
+ob1.cs0.cs_admin uninstall_disk  8
+ob1.cs1.cs_admin uninstall_disk  1
+ob1.cs1.cs_admin uninstall_disk  2
+ob1.cs1.cs_admin uninstall_disk  3
+ob1.cs1.cs_admin uninstall_disk  4
+ob1.cs1.cs_admin uninstall_disk  5
+ob1.cs1.cs_admin uninstall_disk  6
+ob1.cs1.cs_admin uninstall_disk  7
+ob1.cs1.cs_admin uninstall_disk  8
+ob1.cs0.clean_sstable 1
+ob1.cs0.clean_sstable 2
+ob1.cs0.clean_sstable 3
+ob1.cs0.clean_sstable 4
+ob1.cs0.clean_sstable 5
+ob1.cs0.clean_sstable 6
+ob1.cs0.clean_sstable 7
+ob1.cs0.clean_sstable 8
+ob1.cs1.clean_sstable 1
+ob1.cs1.clean_sstable 2
+ob1.cs1.clean_sstable 3
+ob1.cs1.clean_sstable 4
+ob1.cs1.clean_sstable 5
+ob1.cs1.clean_sstable 6
+ob1.cs1.clean_sstable 7
+ob1.cs1.clean_sstable 8
+ob1.cs0.cs_admin install_disk  1
+ob1.cs0.cs_admin install_disk  2
+ob1.cs0.cs_admin install_disk  3
+ob1.cs0.cs_admin install_disk  4
+ob1.cs0.cs_admin install_disk  5
+ob1.cs0.cs_admin install_disk  6
+ob1.cs0.cs_admin install_disk  7
+ob1.cs0.cs_admin install_disk  8
+ob1.cs1.cs_admin install_disk  1
+ob1.cs1.cs_admin install_disk  2
+ob1.cs1.cs_admin install_disk  3
+ob1.cs1.cs_admin install_disk  4
+ob1.cs1.cs_admin install_disk  5
+ob1.cs1.cs_admin install_disk  6
+ob1.cs1.cs_admin install_disk  7
+ob1.cs1.cs_admin install_disk  8
+ob1.cs0.cs_admin uninstall_disk  1
+ob1.cs0.cs_admin uninstall_disk  2
+ob1.cs0.cs_admin uninstall_disk  3
+ob1.cs0.cs_admin uninstall_disk  4
+ob1.cs0.cs_admin uninstall_disk  5
+ob1.cs0.cs_admin uninstall_disk  6
+ob1.cs0.cs_admin uninstall_disk  7
+ob1.cs0.cs_admin uninstall_disk  8
+ob1.cs1.cs_admin uninstall_disk  1
+ob1.cs1.cs_admin uninstall_disk  2
+ob1.cs1.cs_admin uninstall_disk  3
+ob1.cs1.cs_admin uninstall_disk  4
+ob1.cs1.cs_admin uninstall_disk  5
+ob1.cs1.cs_admin uninstall_disk  6
+ob1.cs1.cs_admin uninstall_disk  7
+ob1.cs1.cs_admin uninstall_disk  8
+ob1.cs0.clean_sstable 1
+ob1.cs0.clean_sstable 2
+ob1.cs0.clean_sstable 3
+ob1.cs0.clean_sstable 4
+ob1.cs0.clean_sstable 5
+ob1.cs0.clean_sstable 6
+ob1.cs0.clean_sstable 7
+ob1.cs0.clean_sstable 8
+ob1.cs1.clean_sstable 1
+ob1.cs1.clean_sstable 2
+ob1.cs1.clean_sstable 3
+ob1.cs1.clean_sstable 4
+ob1.cs1.clean_sstable 5
+ob1.cs1.clean_sstable 6
+ob1.cs1.clean_sstable 7
+ob1.cs1.clean_sstable 8
+ob1.cs0.cs_admin install_disk  1
+ob1.cs0.cs_admin install_disk  2
+ob1.cs0.cs_admin install_disk  3
+ob1.cs0.cs_admin install_disk  4
+ob1.cs0.cs_admin install_disk  5
+ob1.cs0.cs_admin install_disk  6
+ob1.cs0.cs_admin install_disk  7
+ob1.cs0.cs_admin install_disk  8
+ob1.cs1.cs_admin install_disk  1
+ob1.cs1.cs_admin install_disk  2
+ob1.cs1.cs_admin install_disk  3
+ob1.cs1.cs_admin install_disk  4
+ob1.cs1.cs_admin install_disk  5
+ob1.cs1.cs_admin install_disk  6
+ob1.cs1.cs_admin install_disk  7
+ob1.cs1.cs_admin install_disk  8
+ob1.cs0.cs_admin uninstall_disk  1
+ob1.cs0.cs_admin uninstall_disk  2
+ob1.cs0.cs_admin uninstall_disk  3
+ob1.cs0.cs_admin uninstall_disk  4
+ob1.cs0.cs_admin uninstall_disk  5
+ob1.cs0.cs_admin uninstall_disk  6
+ob1.cs0.cs_admin uninstall_disk  7
+ob1.cs0.cs_admin uninstall_disk  8
+ob1.cs1.cs_admin uninstall_disk  1
+ob1.cs1.cs_admin uninstall_disk  2
+ob1.cs1.cs_admin uninstall_disk  3
+ob1.cs1.cs_admin uninstall_disk  4
+ob1.cs1.cs_admin uninstall_disk  5
+ob1.cs1.cs_admin uninstall_disk  6
+ob1.cs1.cs_admin uninstall_disk  7
+ob1.cs1.cs_admin uninstall_disk  8
+ob1.cs0.clean_sstable 1
+ob1.cs0.clean_sstable 2
+ob1.cs0.clean_sstable 3
+ob1.cs0.clean_sstable 4
+ob1.cs0.clean_sstable 5
+ob1.cs0.clean_sstable 6
+ob1.cs0.clean_sstable 7
+ob1.cs0.clean_sstable 8
+ob1.cs1.clean_sstable 1
+ob1.cs1.clean_sstable 2
+ob1.cs1.clean_sstable 3
+ob1.cs1.clean_sstable 4
+ob1.cs1.clean_sstable 5
+ob1.cs1.clean_sstable 6
+ob1.cs1.clean_sstable 7
+ob1.cs1.clean_sstable 8
+ob1.cs0.cs_admin install_disk  1
+ob1.cs0.cs_admin install_disk  2
+ob1.cs0.cs_admin install_disk  3
+ob1.cs0.cs_admin install_disk  4
+ob1.cs0.cs_admin install_disk  5
+ob1.cs0.cs_admin install_disk  6
+ob1.cs0.cs_admin install_disk  7
+ob1.cs0.cs_admin install_disk  8
+ob1.cs1.cs_admin install_disk  1
+ob1.cs1.cs_admin install_disk  2
+ob1.cs1.cs_admin install_disk  3
+ob1.cs1.cs_admin install_disk  4
+ob1.cs1.cs_admin install_disk  5
+ob1.cs1.cs_admin install_disk  6
+ob1.cs1.cs_admin install_disk  7
+ob1.cs1.cs_admin install_disk  8
+ob1.cs0.cs_admin uninstall_disk  1
+ob1.cs0.cs_admin uninstall_disk  2
+ob1.cs0.cs_admin uninstall_disk  3
+ob1.cs0.cs_admin uninstall_disk  4
+ob1.cs0.cs_admin uninstall_disk  5
+ob1.cs0.cs_admin uninstall_disk  6
+ob1.cs0.cs_admin uninstall_disk  7
+ob1.cs0.cs_admin uninstall_disk  8
+ob1.cs1.cs_admin uninstall_disk  1
+ob1.cs1.cs_admin uninstall_disk  2
+ob1.cs1.cs_admin uninstall_disk  3
+ob1.cs1.cs_admin uninstall_disk  4
+ob1.cs1.cs_admin uninstall_disk  5
+ob1.cs1.cs_admin uninstall_disk  6
+ob1.cs1.cs_admin uninstall_disk  7
+ob1.cs1.cs_admin uninstall_disk  8
+ob1.cs0.clean_sstable 1
+ob1.cs0.clean_sstable 2
+ob1.cs0.clean_sstable 3
+ob1.cs0.clean_sstable 4
+ob1.cs0.clean_sstable 5
+ob1.cs0.clean_sstable 6
+ob1.cs0.clean_sstable 7
+ob1.cs0.clean_sstable 8
+ob1.cs1.clean_sstable 1
+ob1.cs1.clean_sstable 2
+ob1.cs1.clean_sstable 3
+ob1.cs1.clean_sstable 4
+ob1.cs1.clean_sstable 5
+ob1.cs1.clean_sstable 6
+ob1.cs1.clean_sstable 7
+ob1.cs1.clean_sstable 8
+ob1.cs0.cs_admin install_disk  1
+ob1.cs0.cs_admin install_disk  2
+ob1.cs0.cs_admin install_disk  3
+ob1.cs0.cs_admin install_disk  4
+ob1.cs0.cs_admin install_disk  5
+ob1.cs0.cs_admin install_disk  6
+ob1.cs0.cs_admin install_disk  7
+ob1.cs0.cs_admin install_disk  8
+ob1.cs1.cs_admin install_disk  1
+ob1.cs1.cs_admin install_disk  2
+ob1.cs1.cs_admin install_disk  3
+ob1.cs1.cs_admin install_disk  4
+ob1.cs1.cs_admin install_disk  5
+ob1.cs1.cs_admin install_disk  6
+ob1.cs1.cs_admin install_disk  7
+ob1.cs1.cs_admin install_disk  8
+ob1.cs0.cs_admin uninstall_disk  1
+ob1.cs0.cs_admin uninstall_disk  2
+ob1.cs0.cs_admin uninstall_disk  3
+ob1.cs0.cs_admin uninstall_disk  4
+ob1.cs0.cs_admin uninstall_disk  5
+ob1.cs0.cs_admin uninstall_disk  6
+ob1.cs0.cs_admin uninstall_disk  7
+ob1.cs0.cs_admin uninstall_disk  8
+ob1.cs1.cs_admin uninstall_disk  1
+ob1.cs1.cs_admin uninstall_disk  2
+ob1.cs1.cs_admin uninstall_disk  3
+ob1.cs1.cs_admin uninstall_disk  4
+ob1.cs1.cs_admin uninstall_disk  5
+ob1.cs1.cs_admin uninstall_disk  6
+ob1.cs1.cs_admin uninstall_disk  7
+ob1.cs1.cs_admin uninstall_disk  8
+ob1.cs0.clean_sstable 1
+ob1.cs0.clean_sstable 2
+ob1.cs0.clean_sstable 3
+ob1.cs0.clean_sstable 4
+ob1.cs0.clean_sstable 5
+ob1.cs0.clean_sstable 6
+ob1.cs0.clean_sstable 7
+ob1.cs0.clean_sstable 8
+ob1.cs1.clean_sstable 1
+ob1.cs1.clean_sstable 2
+ob1.cs1.clean_sstable 3
+ob1.cs1.clean_sstable 4
+ob1.cs1.clean_sstable 5
+ob1.cs1.clean_sstable 6
+ob1.cs1.clean_sstable 7
+ob1.cs1.clean_sstable 8
+ob1.cs0.cs_admin install_disk  1
+ob1.cs0.cs_admin install_disk  2
+ob1.cs0.cs_admin install_disk  3
+ob1.cs0.cs_admin install_disk  4
+ob1.cs0.cs_admin install_disk  5
+ob1.cs0.cs_admin install_disk  6
+ob1.cs0.cs_admin install_disk  7
+ob1.cs0.cs_admin install_disk  8
+ob1.cs1.cs_admin install_disk  1
+ob1.cs1.cs_admin install_disk  2
+ob1.cs1.cs_admin install_disk  3
+ob1.cs1.cs_admin install_disk  4
+ob1.cs1.cs_admin install_disk  5
+ob1.cs1.cs_admin install_disk  6
+ob1.cs1.cs_admin install_disk  7
+ob1.cs1.cs_admin install_disk  8
+ob1.cs0.cs_admin uninstall_disk  1
+ob1.cs0.cs_admin uninstall_disk  2
+ob1.cs0.cs_admin uninstall_disk  3
+ob1.cs0.cs_admin uninstall_disk  4
+ob1.cs0.cs_admin uninstall_disk  5
+ob1.cs0.cs_admin uninstall_disk  6
+ob1.cs0.cs_admin uninstall_disk  7
+ob1.cs0.cs_admin uninstall_disk  8
+ob1.cs1.cs_admin uninstall_disk  1
+ob1.cs1.cs_admin uninstall_disk  2
+ob1.cs1.cs_admin uninstall_disk  3
+ob1.cs1.cs_admin uninstall_disk  4
+ob1.cs1.cs_admin uninstall_disk  5
+ob1.cs1.cs_admin uninstall_disk  6
+ob1.cs1.cs_admin uninstall_disk  7
+ob1.cs1.cs_admin uninstall_disk  8
+ob1.cs0.clean_sstable 1
+ob1.cs0.clean_sstable 2
+ob1.cs0.clean_sstable 3
+ob1.cs0.clean_sstable 4
+ob1.cs0.clean_sstable 5
+ob1.cs0.clean_sstable 6
+ob1.cs0.clean_sstable 7
+ob1.cs0.clean_sstable 8
+ob1.cs1.clean_sstable 1
+ob1.cs1.clean_sstable 2
+ob1.cs1.clean_sstable 3
+ob1.cs1.clean_sstable 4
+ob1.cs1.clean_sstable 5
+ob1.cs1.clean_sstable 6
+ob1.cs1.clean_sstable 7
+ob1.cs1.clean_sstable 8
+ob1.cs0.cs_admin install_disk  1
+ob1.cs0.cs_admin install_disk  2
+ob1.cs0.cs_admin install_disk  3
+ob1.cs0.cs_admin install_disk  4
+ob1.cs0.cs_admin install_disk  5
+ob1.cs0.cs_admin install_disk  6
+ob1.cs0.cs_admin install_disk  7
+ob1.cs0.cs_admin install_disk  8
+ob1.cs1.cs_admin install_disk  1
+ob1.cs1.cs_admin install_disk  2
+ob1.cs1.cs_admin install_disk  3
+ob1.cs1.cs_admin install_disk  4
+ob1.cs1.cs_admin install_disk  5
+ob1.cs1.cs_admin install_disk  6
+ob1.cs1.cs_admin install_disk  7
+ob1.cs1.cs_admin install_disk  8
+ob1.stop_check

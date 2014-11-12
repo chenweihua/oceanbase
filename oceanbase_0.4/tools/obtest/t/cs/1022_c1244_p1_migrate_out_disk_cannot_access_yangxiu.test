@@ -1,0 +1,40 @@
+ob1=OBI(cluster=1222,app_name=collect, schema_file=./collect.schema, local_sstable_dir=~/sstable);
+
+ob1.cs0.set sstable_dist=1;
+ob1.cs1.set sstable_dist=0;
+
+ob1.cs1.set status=disable;
+
+#use iof
+ob1.cs0.set use_iof=1;
+
+ob1.reboot;
+
+ob1.source include/migrate.inc;
+sleep 10;
+
+#some sstable broken
+ob1.cs0.iof EIO 1 269313 1;
+
+#start cs1
+ob1.cs1.set status=enable;
+ob1.cs1.start;
+
+sleep 20;
+
+ob1.check_cs_sstable 233;
+
+#make sure no more migrate
+sleep 10;
+ob1.check_cs_sstable 233;
+
+#some sstable ok
+ob1.cs0.iof EIO 1 269313 0;
+sleep 10;
+
+ob1.check_cs_sstable 234;
+
+
+
+
+
